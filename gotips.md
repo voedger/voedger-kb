@@ -20,5 +20,21 @@
 
 ![image](https://github.com/voedger/kb/assets/11589750/55e399cc-9d99-49d2-925d-2b203b63c89e)
 
+## Check that the type implements the interface
 
+Check that the type implements the interface:
 
+```go
+type SomeInterface interface {
+    Method()
+}
+
+type Implementation struct{}
+
+func (*Implementation) Method() { fmt.Println("Hello, World!") }
+
+var _ SomeInterface = (*Implementation)(nil) // ← this is the line
+```
+
+-  ([playground](https://go.dev/play/p/h6F5Dg-KYLp))
+-  spied in:[medium.com: Write Go like a senior engineer](https://levelup.gitconnected.com/write-go-like-a-senior-engineer-eee7f03a1883), 
