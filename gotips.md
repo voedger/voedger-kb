@@ -23,7 +23,7 @@
 ## Ensure a type implements an interface
 
 ```go
-type ISomeInterface interface {
+type SomeInterface interface {
     Method()
 }
 
@@ -31,7 +31,7 @@ type Implementation struct{}
 
 func (*Implementation) Method() { fmt.Println("Hello, World!") }
 
-var _ ISomeInterface = (*Implementation)(nil) // ← this is the line
+var _ SomeInterface = (*Implementation)(nil) // ← this is the line
 ```
 
 -  ([Playground](https://go.dev/play/p/h6F5Dg-KYLp))
