@@ -37,4 +37,4 @@ var _ SomeInterface = (*Implementation)(nil) // ← this is the line
 ```
 
 -  ([playground](https://go.dev/play/p/h6F5Dg-KYLp))
--  spied in:[medium.com: Write Go like a senior engineer](https://levelup.gitconnected.com/write-go-like-a-senior-engineer-eee7f03a1883), 
+-  spied in:[medium.com: Write Go like a senior engineer](https://levelup.gitconnected.com/write-go-like-a-senior-engineer-eee7f03a1883)
