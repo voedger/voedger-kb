@@ -34,6 +34,6 @@ func (*Implementation) Method() { fmt.Println("Hello, World!") }
 var _ SomeInterface = (*Implementation)(nil) // ← this is the line
 ```
 
--  ([Playground](https://go.dev/play/p/h6F5Dg-KYLp))
+-  [Playground](https://go.dev/play/p/h6F5Dg-KYLp)
 -  Spotted in: [medium.com: Write Go like a senior engineer](https://levelup.gitconnected.com/write-go-like-a-senior-engineer-eee7f03a1883)
 
