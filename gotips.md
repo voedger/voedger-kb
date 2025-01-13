@@ -23,15 +23,18 @@
 ## Ensure a type implements an interface
 
 ```go
+// Let we have an interface...
 type SomeInterface interface {
     Method()
 }
 
+// Let we have a type...
 type Implementation struct{}
 
 func (*Implementation) Method() { fmt.Println("Hello, World!") }
 
-var _ SomeInterface = (*Implementation)(nil) // ← this is the line
+// We want to ensure that the type implements the interface...
+var _ SomeInterface = (*Implementation)(nil) // ← this does the job
 ```
 
 -  [Playground](https://go.dev/play/p/8cAxiaY8KEj)
