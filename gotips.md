@@ -20,7 +20,7 @@
 
 ![image](https://github.com/voedger/kb/assets/11589750/55e399cc-9d99-49d2-925d-2b203b63c89e)
 
-## Assure that a type implements an interface
+## Ensure a type implements an interface
 
 ```go
 type SomeInterface interface {
