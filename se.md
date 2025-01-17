@@ -1,6 +1,6 @@
 # Software Engineering
 
-- **Software Engineering**: Theory and practice of systematic methods for building reliable software.
+- **Software Engineering**: Theory and practice of applying systematic methods for building reliable software.
 - **Systematic method**: Step-by-step approach that follows a predefined set of principles and procedures to achieve consistent results.
 
 
@@ -42,6 +42,7 @@ The interplay between these domains is crucial - the knowledge domain informs ho
 
 ## Principles
 
+- Result should me measurable, if possible (metrics)
 - Avoid dynamic anti-pátterns
 
 ## Dynamic anti-patterns
