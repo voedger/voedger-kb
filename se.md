@@ -182,4 +182,12 @@ Cause: Dynamic anti-patterns often stem from poorly designed concurrency control
 
 **Circuit breakers** are software components that monitor system failures and automatically prevent further requests to a failing service for a set time period, allowing it to recover while providing immediate fallback responses to clients.
 
+**Design** is the process of crafting solutions by organizing elements to meet specific goals.
+
 **Polling** is a technique where a system repeatedly checks for state changes, data availability, or conditions at fixed intervals rather than receiving notifications when changes occur.
+
+**Software Architecture** refers to the high-level structures of a software system and the discipline of creating such structures and systems. Each structure comprises software elements, relations among them, and properties of both elements and relations.
+
+**Software Design** 
+    - v1. is the process of blueprinting defining software architecture, components, interfaces, and other characteristics to satisfy specified requirements. It includes making decisions about software design patterns, algorithms, data structures, and more.
+    - v2. detailed implementation of the software, including the selection of algorithms, data structures, and modules to fulfill the architecture's specifications.
