@@ -1,6 +1,8 @@
 # Software Engineering
 
-Software Engineering applies engineering principles to software development, focusing on systematic, dísciplined, and quantifiable approaches to building reliable software systems.
+- **Software Engineering**: Theory and practice of systematic methods for building reliable software.
+- **Systematic method**: Step-by-step approach that follows a predefined set of principles and procedures to achieve consistent results.
+
 
 ## Overview
 
@@ -38,9 +40,13 @@ As an **Activity Domain**:
 The interplay between these domains is crucial - the knowledge domain informs how activities should be carried out, while experiences from activities help evolve and refine the knowledge domain. This dual nature is what makes software engineering a rich and complex field that requires both theoretical understanding and practical skills.óó
 
 
-## Dynamic anti-pátterns
+## Principles
 
-**Dynamic anti-patterns**: code patterns that lead to the degradation of performance, reliability, or maintainability. While some of these might also stem from poor architectural decisions, they are generally observed (and felt) at runtime. 
+- Avoid dynamic anti-pátterns
+
+## Dynamic anti-patterns
+
+**Dynamic anti-patterns**: code patterns that lead to the degradation of performance, reliability, or maintainability.
 
 Cause: Dynamic anti-patterns often stem from poorly designed concurrency control, resource handling, or error-handling mechanisms. Even if the initial architecture seems correct, **runtime behavior** can reveal significant inefficiencies (like busy waiting) or hidden faults. Addressing them involves:
 
@@ -55,6 +61,16 @@ Cause: Dynamic anti-patterns often stem from poorly designed concurrency control
 - **What it is:** A thread (or process) constantly checks for a condition in a loop instead of blocking or yielding.  
 - **Why it’s bad:** Consumes CPU cycles unnecessarily, leading to higher resource utilization and possible starvation of other threads.  
 - **Better approach:** Use proper synchronization constructs like semaphores, mutexes, events, or condition variables that allow the waiting thread to sleep until notified.
+---
+
+### Memory Leaks & Resource Leaks
+- **What it is:** Failing to release memory or other resources (like sockets, file handles) after use, resulting in gradually growing usage.  
+- **Why it’s bad:**  
+  - Eventually starves the system of memory or OS handles.  
+  - Leads to performance degradation and potential crashes over time.  
+- **Better approach:**  
+  - Use try-with-resources, RAII (Resource Acquisition Is Initialization), or automatic memory management where possible.  
+  - Ensure you always close or release resources in finally blocks (in languages where manual resource management is needed).
 
 ---
 
@@ -99,7 +115,7 @@ Cause: Dynamic anti-patterns often stem from poorly designed concurrency control
   - Consider alternative synchronization mechanisms like read-write locks
   - Implement lock striping for better concurrency
   - Use thread-local storage where possible
-  
+
 ---
 
 ### Excessive or Repeated Resource Acquisition
@@ -135,17 +151,6 @@ Cause: Dynamic anti-patterns often stem from poorly designed concurrency control
   - Implement request coalescing to handle multiple similar requests as one
   - Design systems to wake only necessary number of workers
   - Use event notification mechanisms that support exclusive wake-ups
-
----
-
-### Memory Leaks & Resource Leaks
-- **What it is:** Failing to release memory or other resources (like sockets, file handles) after use, resulting in gradually growing usage.  
-- **Why it’s bad:**  
-  - Eventually starves the system of memory or OS handles.  
-  - Leads to performance degradation and potential crashes over time.  
-- **Better approach:**  
-  - Use try-with-resources, RAII (Resource Acquisition Is Initialization), or automatic memory management where possible.  
-  - Ensure you always close or release resources in finally blocks (in languages where manual resource management is needed).
 
 ---
 
