@@ -1,8 +1,8 @@
 # Software Engineering
 
-- **Software Engineering**: The theory and practice of applying engineering systematic methods to software development.
-- **Systematic method**: A structured approach that follows predefined principles and procedures.
-- **Why**: To achieve consistent (stable) results.
+- **Software Engineering**: The theory and practice of applying engineering systematic methods to software development
+- **Systematic method**: A method that follows predefined principles and procedures
+- **Why**: To achieve consistent (stable) results
 
 ## Overview
 
