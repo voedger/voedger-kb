@@ -37,12 +37,12 @@ As an **Activity Domain**:
 - Requires active stakeholder communication and requirement gathering
 - Involves practical system design and architecture implementation
 
-The interplay between these domains is crucial - the knowledge domain informs how activities should be carried out, while experiences from activities help evolve and refine the knowledge domain. This dual nature is what makes software engineering a rich and complex field that requires both theoretical understanding and practical skills.óó
+The interplay between these domains is crucial - the knowledge domain informs how activities should be carried out, while experiences from activities help evolve and refine the knowledge domain. This dual nature is what makes software engineering a rich and complex field that requires both theoretical understanding and practical skills.
 
 
 ## Principles
 
-- Result should me measurable, if possible (metrics)
+- Result should be measurable, if possible (metrics)
 - Avoid dynamic anti-pátterns
 
 ## Dynamic anti-patterns
