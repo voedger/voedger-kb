@@ -1,6 +1,7 @@
 # Software Engineering
 
-- **Software Engineering**: The theory and practice of applying engineering systematic methods to software development
+- **Software Engineering**: The application of a systematic, disciplined, quantifiable approach to the development, operation, and maintenance of software; that is, the application of engineering
+to software (ISO/IEC/IEEE, “ISO/IEC/IEEE 24765:2017 Systems and Software Engineering — Vocabulary,” 2nd ed. 2017.)
 - **Systematic method**: A method that follows the system of predefined principles and procedures
 - **Why**: To achieve consistent (stable) results
 
