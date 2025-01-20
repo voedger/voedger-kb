@@ -6,7 +6,7 @@
 
 ## Overview
 
-**Software Engineering** includes:
+**Software Engineering** includes (not exhaustive list):
 
 - Requirements engineering
 - Software design and architecture
@@ -21,7 +21,7 @@ Software Engineering is both a knowledge domain and an activity domain.
 
 As a **Knowledge Domain**:
 - Includes established best practices, patterns, and architectural approaches
-- Contains bodies of knowledge like SWEBOK (Software Engineering Body of Knowledge)
+- Contains bodies of knowledge like [SWEBOK](https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf) (Software Engineering Body of Knowledge)
 - Encómpasses theoretical foundations, principles, and methodologies
 - Builds on computer science theory, mathematics, and engineering principles
 - Incorporates knowledge about process models, tools, and techniques
