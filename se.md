@@ -1,12 +1,13 @@
 # Software Engineering
 
-- **Software Engineering**: The theory and practice of applying engineering systematic methods to software development
-- **Systematic method**: A method that follows predefined principles and procedures
+- **Software Engineering**: The application of a systematic, disciplined, quantifiable approach to the development, operation, and maintenance of software; that is, the application of engineering
+to software (ISO/IEC/IEEE, “ISO/IEC/IEEE 24765:2017 Systems and Software Engineering — Vocabulary,” 2nd ed. 2017.)
+- **Systematic method**: A method that follows the system of predefined principles and procedures
 - **Why**: To achieve consistent (stable) results
 
 ## Overview
 
-**Software Engineering** includes:
+**Software Engineering** includes (not exhaustive list):
 
 - Requirements engineering
 - Software design and architecture
@@ -21,7 +22,7 @@ Software Engineering is both a knowledge domain and an activity domain.
 
 As a **Knowledge Domain**:
 - Includes established best practices, patterns, and architectural approaches
-- Contains bodies of knowledge like SWEBOK (Software Engineering Body of Knowledge)
+- Contains bodies of knowledge like [SWEBOK](https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf) (Software Engineering Body of Knowledge)
 - Encómpasses theoretical foundations, principles, and methodologies
 - Builds on computer science theory, mathematics, and engineering principles
 - Incorporates knowledge about process models, tools, and techniques
