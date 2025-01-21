@@ -2,48 +2,33 @@
 
 - **Software Engineering**: The application of a systematic, disciplined, quantifiable approach to the development, operation, and maintenance of software; that is, the application of engineering
 to software (ISO/IEC/IEEE, “ISO/IEC/IEEE 24765:2017 Systems and Software Engineering — Vocabulary,” 2nd ed. 2017.)
-- **Systematic method**: A method that follows the system of predefined principles and procedures
+- **disciplined**: [ˈdɪsɪplɪnd] showing a controlled form of behavior or way of working.
+- **quantifiable**: [kwɒntɪˈfaɪəbl] able to be expressed or measured as a quantity.
+- **Systematic approach**: An approach that follows the system of predefined principles and procedures
 - **Why**: To achieve consistent (stable) results
 
-## Overview
+## Knowledge Areas
 
-**Software Engineering** includes (not exhaustive list):
+According to [An Overview of the SWEBOK Guide](https://sebokwiki.org/wiki/An_Overview_of_the_SWEBOK_Guide)
 
-- Requirements engineering
-- Software design and architecture
-- Programming/coding - The actual implementation of software
-- Testing and quality assurance
-- Project management
-- Software maintenance
-- Configuration management
-- Software documentation
-
-Software Engineering is both a knowledge domain and an activity domain.
-
-As a **Knowledge Domain**:
-- Includes established best practices, patterns, and architectural approaches
-- Contains bodies of knowledge like [SWEBOK](https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf) (Software Engineering Body of Knowledge)
-- Encómpasses theoretical foundations, principles, and methodologies
-- Builds on computer science theory, mathematics, and engineering principles
-- Incorporates knowledge about process models, tools, and techniques
-- Includes understanding of software quality attributes and metrics
-- Covers theoretical aspects of testing, verification, and validation
-
-As an **Activity Domain**:
-- Involves the practical application of software development methods
-- Includes the actual development and maintenance of software systems
-- Encompasses project management and team coordination activities
-- Involves real-world problem-solving and decision-making
-- Includes concrete activities like coding, testing, and deployment
-- Requires active stakeholder communication and requirement gathering
-- Involves practical system design and architecture implementation
-
-The interplay between these domains is crucial - the knowledge domain informs how activities should be carried out, while experiences from activities help evolve and refine the knowledge domain. This dual nature makes software engineering a rich and complex field that requires both theoretical understanding and practical skills.
-
-## Principles
-
-- Software should be measurable, if possible (metrics)
-- Avoid dynamic anti-patterns
+ -Requirements
+- Architecture
+- Design
+- Construction
+- Testing
+- Operations
+- Maintenance
+- Configuration Management
+- Engineering Management
+- Process
+- Models and Methods
+- Quality
+- Security
+- Professional Practice
+- Economics
+- Computing Foundations
+- Mathematical Foundations
+- Engineering Foundations
 
 ## Dynamic anti-patterns
 
