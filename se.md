@@ -58,8 +58,8 @@ Cause: Dynamic anti-patterns often stem from poorly designed concurrency control
 ### Goroutine/Task/Thread Leak
 
 - **What it is:**  
-  Spawning a goroutine but never providing a mechanism to ensure they are properly signaled to stop and waited on. Even if you only spin up *one* goroutine, it still counts as a leak if it never completes or is never formally shut down.
-
+  Spawning goroutines but never providing a mechanism to ensure they are properly signaled to stop and waited on. Even if you only spin up *one* goroutine, it still counts as a leak if it never completes or is never formally shut down.
+  
 - **Why it’s bad:**  
   - Goroutines remain running indefinitely and can gradually consume memory or CPU resources.  
   - Cleanup or graceful termination becomes complex, since no one is tracking when (or if) the goroutine should stop.
