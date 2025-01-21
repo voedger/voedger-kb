@@ -58,9 +58,27 @@ Cause: Dynamic anti-patterns often stem from poorly designed concurrency control
 ---
 
 ### Busy Waiting (Spin Waiting)
-- **What it is:** A thread (or process) constantly checks for a condition in a loop instead of blocking or yielding.
+- **What it is:** A thread (or process) constantly checks for a condition in a loop.
 - **Why it’s bad:** Consumes CPU cycles unnecessarily, leading to higher resource utilization and possible starvation of other threads.
 - **Better approach:** Use proper synchronization constructs like semaphores, mutexes, events, or condition variables that allow the waiting thread to sleep until notified.
+
+---
+
+### Goroutine/Task/Thread Leak
+
+- **What it is:**  
+  Spawning a goroutine but never providing a mechanism to ensure they are properly signaled to stop and waited on. Even if you only spin up *one* goroutine, it still counts as a leak if it never completes or is never formally shut down.
+
+- **Why it’s bad:**  
+  - Goroutines remain running indefinitely and can gradually consume memory or CPU resources.  
+  - Cleanup or graceful termination becomes complex, since no one is tracking when (or if) the goroutine should stop.
+  - Errors or partial work may go unnoticed if the goroutine outlives the rest of the application or terminates abruptly.
+
+- **Better approach:**  
+  - **Context cancellation** (`context.Context`): Pass a context to your goroutine so it can exit cleanly when the context is canceled.  
+  - **WaitGroups or other sync mechanisms**: Use a `sync.WaitGroup` to ensure the main function doesn’t exit before the goroutine is done, or to wait for graceful shutdown.  
+  - **Lifecycle management / cleanup functions**: Libraries like [Google Wire](https://github.com/google/wire) allow you to define “cleanup” functions. After wiring up your dependencies, Wire can invoke these cleanup callbacks as part of a structured program shutdown. Use them to cancel running goroutines or release resources consistently.  
+  - **Channel-based coordination**: Send signals through channels to instruct goroutines to finish their work and exit gracefully.
 
 ---
 
@@ -125,17 +143,6 @@ Cause: Dynamic anti-patterns often stem from poorly designed concurrency control
 - **Better approach:**
     - Use resource pooling (e.g., connection pools, object pools)
     - Cache resources if they are reusable
-
----
-
-### Fire-and-Forget Without Feedback
-- **What it is:** Spawning asynchronous tasks or network requests without checking success/failure status.
-- **Why it’s bad:**
-    - Errors or failures might go unnoticed, leading to data inconsistency or lost work
-    - Harder to debug and maintain
-- **Better approach:**
-    - Provide callbacks, futures/promises, or logs/metrics
-    - Use acknowledgments or success/failure handlers to track completion
 
 ---
 
