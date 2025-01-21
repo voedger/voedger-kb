@@ -7,29 +7,33 @@ to software (ISO/IEC/IEEE, “ISO/IEC/IEEE 24765:2017 Systems and Software Engin
 - **Systematic approach**: An approach that follows the system of predefined principles and procedures
 - **Why**: To achieve consistent (stable) results
 
+
 ## Knowledge Areas
 
-According to [An Overview of the SWEBOK Guide](https://sebokwiki.org/wiki/An_Overview_of_the_SWEBOK_Guide)
- - [SWEBOK](https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf) itself
+According to  [SWEBOK, Guide to the Software Engineering Body of Knowledge v4.0](https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf):
 
- -Requirements
-- Architecture
-- Design
-- Construction
-- Testing
-- Operations
-- Maintenance
-- Configuration Management
-- Engineering Management
-- Process
-- Models and Methods
-- Quality
-- Security
-- Professional Practice
-- Economics
+- Software Requirements
+- Software Architecture
+- Software Design
+- Software Construction
+- Software Testing
+- Software Engineering Operations
+- Software Maintenance
+- Software Configuration Management
+- Software Engineering Management
+- Software Engineering Process
+- Software Engineering Models and Methods
+- Software Quality
+- Software Security
+- Software Engineering Professional Practice
+- Software Engineering Economics
 - Computing Foundations
 - Mathematical Foundations
 - Engineering Foundations
+
+SWEBOK:
+- The Guide to the Software Engineering Body of Knowledge (SWEBOK Guide), published by the IEEE Computer Society (IEEE CS), represents the current state of generally accepted, consensus-based knowledge emanating from the interplay between software engineering theory and practice. Its objectives include the provision of guidance for learners, researchers, and practitioners to identify and share a common understanding of “generally accepted knowledge” in software engineering, defining the boundary between software engineering and related disciplines, and providing a foundation for certifications and educational curricula.
+- [An Overview of the SWEBOK Guide](https://sebokwiki.org/wiki/An_Overview_of_the_SWEBOK_Guide)
 
 ## Dynamic anti-patterns
 
