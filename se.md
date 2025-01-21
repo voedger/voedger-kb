@@ -10,6 +10,7 @@ to software (ISO/IEC/IEEE, “ISO/IEC/IEEE 24765:2017 Systems and Software Engin
 ## Knowledge Areas
 
 According to [An Overview of the SWEBOK Guide](https://sebokwiki.org/wiki/An_Overview_of_the_SWEBOK_Guide)
+ - [SWEBOK](https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf) itself
 
  -Requirements
 - Architecture
