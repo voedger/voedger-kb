@@ -13,7 +13,7 @@ This document provides guidelines for Go-based development at Voedger project.
 
 ## Go package structure
 
-https://github.com/voedger/kb/issues/45
+- [guide: go package structure](https://github.com/voedger/kb/issues/45)
 
 ## Concurrency and review
 
