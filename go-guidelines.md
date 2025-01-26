@@ -27,6 +27,12 @@ Do not use `.cmd` files, use `.sh` or `.bash` even on Windows.
 
 Test files shall be in the `<testing-package>_test` package, whenever posisble (black-box testing).
 
+## Avoid anti-patterns
+
+- Busy Waiting (Spin Waiting)
+- Goroutine/Task/Thread Leak
+- Heap Escape Without Reuse (especially in hot paths)
+
 ## Testable Examples in Go
 
 If possible create testable examples for your code. They are a great way to document your code and provide examples of how to use it.
