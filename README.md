@@ -15,7 +15,8 @@ This knowledge base is organized into several key sections:
 ### Structured Documentation
 
 - [Software Engineering principles and best practices for Voedger development](se.md)
-- [Practical tips for Go-based development](gotips.md)
+- [Go-based development guidelines](go-guidelines.md)
+- [Go-based development tips](go-tips.md)
 
 ### Issues
 
