@@ -1,4 +1,8 @@
-## Concepts
+# Go-based development guidelines
+
+This document provides guidelines for Go-based development at Voedger project.
+
+## Foundations and Key References
 
 - [Effective Go](https://go.dev/doc/effective_go)
 - [Go Proverbs](https://go-proverbs.github.io/)
