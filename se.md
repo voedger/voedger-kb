@@ -73,6 +73,39 @@ Cause: Dynamic anti-patterns often stem from poorly designed concurrency control
 
 ---
 
+### Heap Escape Without Reuse
+
+- **What it is:**  
+  Allowing a pointer or slice to escape to the heap during allocation, especially when the object is never reused, resulting in unnecessary memory allocations. This often occurs when functions allocate memory for return values that could have been allocated on the stack or reused across calls.
+
+- **Why it’s bad:**  
+  - Increased pressure on the garbage collector, as heap-allocated objects require more overhead to manage.  
+  - Decreased performance due to higher memory allocation costs and potential cache inefficiency.  
+  - Missed optimization opportunities: Objects that could stay on the stack are cheaper and faster to allocate and deallocate.
+
+- **Example:**  
+  ```go
+  func (bp *borrowedPartition) IsOperationAllowed(ws appdef.IWorkspace, op appdef.OperationKind, res appdef.QName, fld []appdef.FieldName, roles []appdef.QName) (bool, []appdef.FieldName, error) {
+      // `fld` is allocated but not reused, causing a heap escape
+      fld = make([]appdef.FieldName, 0)
+      // Logic populates `fld`...
+      return true, fld, nil
+  }
+  ```
+  Here, the slice `fld` is allocated but is not reused or managed efficiently, leading to avoidable heap allocation.
+
+- **Better approach:**  
+  - **Avoid slice reallocation inside functions:** Use pre-allocated slices or pass them in as pointers when the caller can reuse them.  
+    ```go
+    func (bp *borrowedPartition) IsOperationAllowed(ws appdef.IWorkspace, op appdef.OperationKind, res appdef.QName, fld *[]appdef.FieldName, roles []appdef.QName) (bool, error) {
+        // Reuse the passed-in slice
+        *fld = (*fld)[:0] // Clear the slice for reuse
+        // Logic populates `*fld`...
+        return true, nil
+    }
+
+---
+
 ### Memory Leaks & Resource Leaks
 - **What it is:** Failing to release memory or other resources (like sockets, file handles) after use, resulting in gradually growing usage.
 - **Why it’s bad:**
