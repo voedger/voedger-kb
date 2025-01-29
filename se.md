@@ -2,8 +2,8 @@
 
 - **Software Engineering**: The application of a systematic, disciplined, quantifiable approach to the development, operation, and maintenance of software; that is, the application of engineering
 to software (ISO/IEC/IEEE, “ISO/IEC/IEEE 24765:2017 Systems and Software Engineering — Vocabulary,” 2nd ed. 2017.)
-- **disciplined**: [ˈdɪsɪplɪnd] showing a controlled form of behavior or way of working.
-- **quantifiable**: [kwɒntɪˈfaɪəbl] able to be expressed or measured as a quantity.
+- **disciplined**: (ˈdɪsɪplɪnd) showing a controlled form of behavior or way of working.
+- **quantifiable**: (kwɒntɪˈfaɪəbl) able to be expressed or measured as a quantity.
 - **Systematic approach**: An approach that follows the system of predefined principles and procedures
 - **Why**: To achieve consistent (stable) results
 
