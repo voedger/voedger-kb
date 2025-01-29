@@ -28,7 +28,7 @@ If a developer implements something related to concurrency (e.g., using goroutin
 
 ## Avoid using .cmd files
 
-Do not use `.cmd` files, use `.sh` or `.bash` even on Windows.
+Do not use `.cmd` files, use `.sh` or `.bash`.
 
 ## Black-box testing
 
