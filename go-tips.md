@@ -62,6 +62,6 @@ var _ SomeInterface = (*Implementation)(nil) // ← this does the job
 -  [Playground](https://go.dev/play/p/8cAxiaY8KEj)
 -  Spotted in: [medium.com: Write Go like a senior engineer](https://levelup.gitconnected.com/write-go-like-a-senior-engineer-eee7f03a1883)
 
-## Configuraion
+## Configuration
 
 - [Configuration](https://github.com/voedger/kb/issues/51)
