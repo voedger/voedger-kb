@@ -58,8 +58,8 @@ Cause: Dynamic anti-patterns often stem from poorly designed concurrency control
 ### Goroutine/Task/Thread Leak
 
 - **What it is:**  
-  Spawning a goroutine but never providing a mechanism to ensure they are properly signaled to stop and waited on. Even if you only spin up *one* goroutine, it still counts as a leak if it never completes or is never formally shut down.
-
+  Spawning goroutines but never providing a mechanism to ensure they are properly signaled to stop and waited on. Even if you only spin up *one* goroutine perprocess, it still counts as a leak if it never completes or is never formally shut down.
+  
 - **Why it’s bad:**  
   - Goroutines remain running indefinitely and can gradually consume memory or CPU resources.  
   - Cleanup or graceful termination becomes complex, since no one is tracking when (or if) the goroutine should stop.
@@ -70,6 +70,39 @@ Cause: Dynamic anti-patterns often stem from poorly designed concurrency control
   - **WaitGroups or other sync mechanisms**: Use a `sync.WaitGroup` to ensure the main function doesn’t exit before the goroutine is done, or to wait for graceful shutdown.  
   - **Lifecycle management / cleanup functions**: Libraries like [Google Wire](https://github.com/google/wire) allow you to define “cleanup” functions. After wiring up your dependencies, Wire can invoke these cleanup callbacks as part of a structured program shutdown. Use them to cancel running goroutines or release resources consistently.  
   - **Channel-based coordination**: Send signals through channels to instruct goroutines to finish their work and exit gracefully.
+
+---
+
+### Heap Escape Without Reuse
+
+- **What it is:**  
+  Allowing a pointer or slice to escape to the heap during allocation, especially when the object is never reused, resulting in unnecessary memory allocations. This often occurs when functions allocate memory for return values that could have been allocated on the stack or reused across calls.
+
+- **Why it’s bad:**  
+  - Increased pressure on the garbage collector, as heap-allocated objects require more overhead to manage.  
+  - Decreased performance due to higher memory allocation costs and potential cache inefficiency.  
+  - Missed optimization opportunities: Objects that could stay on the stack are cheaper and faster to allocate and deallocate.
+
+- **Example:**  
+  ```go
+  func (bp *borrowedPartition) IsOperationAllowed(ws appdef.IWorkspace, op appdef.OperationKind, res appdef.QName, fld []appdef.FieldName, roles []appdef.QName) (bool, []appdef.FieldName, error) {
+      // `fld` is allocated but not reused, causing a heap escape
+      fld = make([]appdef.FieldName, 0)
+      // Logic populates `fld`...
+      return true, fld, nil
+  }
+  ```
+  Here, the slice `fld` is allocated but is not reused or managed efficiently, leading to avoidable heap allocation.
+
+- **Better approach:**  
+  - **Avoid slice reallocation inside functions:** Use pre-allocated slices or pass them in as pointers when the caller can reuse them.  
+    ```go
+    func (bp *borrowedPartition) IsOperationAllowed(ws appdef.IWorkspace, op appdef.OperationKind, res appdef.QName, fld *[]appdef.FieldName, roles []appdef.QName) (bool, error) {
+        // Reuse the passed-in slice
+        *fld = (*fld)[:0] // Clear the slice for reuse
+        // Logic populates `*fld`...
+        return true, nil
+    }
 
 ---
 
