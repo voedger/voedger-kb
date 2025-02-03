@@ -62,6 +62,30 @@ var _ SomeInterface = (*Implementation)(nil) // ← this does the job
 -  [Playground](https://go.dev/play/p/8cAxiaY8KEj)
 -  Spotted in: [medium.com: Write Go like a senior engineer](https://levelup.gitconnected.com/write-go-like-a-senior-engineer-eee7f03a1883)
 
+---
+## Ensure a compile-time expression is true
+
+```go
+// Let we should be sure that some constant is in range
+const (
+	// Desired coffee temperature in degrees Celsius.
+	// Default is 60°c
+	CoffeeTemp uint = 60
+
+	// should be from 40 to 90
+	_ = uint(CoffeeTemp - 40)
+	_ = uint(90 - CoffeeTemp)
+
+	// how to freeze default value?
+	// _ = -uint(CoffeeTemp - 60)
+)
+
+// Another way
+var _ = map[bool]any{false: 0, (CoffeeTemp >= 40)&&(CoffeeTemp<=90): 1}
+```
+
+-  [Playground](https://go.dev/play/p/MThTQKi8Ilt)
+
 ## Configuration
 
 - [Configuration](https://github.com/voedger/kb/issues/51)
