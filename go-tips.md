@@ -77,7 +77,7 @@ const (
 	_ = uint(90 - CoffeeTemp)
 
 	// how to freeze default value?
-	// _ = -uint(CoffeeTemp - 40)
+	// _ = -uint(CoffeeTemp - 60)
 )
 
 // Another way
