@@ -75,13 +75,16 @@ const (
 	// should be from 40 to 90
 	_ = uint(CoffeeTemp - 40)
 	_ = uint(90 - CoffeeTemp)
+
+	// how to freeze default value?
+	// _ = -uint(CoffeeTemp - 40)
 )
 
 // Another way
 var _ = map[bool]any{false: 0, (CoffeeTemp >= 40)&&(CoffeeTemp<=90): 1}
 ```
 
--  [Playground](https://go.dev/play/p/tCx4LB2GVo3)
+-  [Playground](https://go.dev/play/p/MThTQKi8Ilt)
 
 ## Configuration
 
