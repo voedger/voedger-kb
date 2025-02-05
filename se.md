@@ -42,6 +42,10 @@ Key ideas in that definition are the following
 - **(1)** Architecture is about what is *fundamental* to a software system; not every element, interconnection, or interface is considered fundamental.
 - **(2)** Architecture considers a system *in its environment*. Much like building architecture, software architecture is outward-looking; it considers a system’s context beyond its boundaries including the people, organizations, software, hardware and other devices with which the system must interact.
 
+> Architecture is the fundamental design of a system that allows colleagues to understand its structure, behavior, and interactions.
+> 
+> maxim-ge
+
 ## Dynamic anti-patterns
 
 **Dynamic anti-patterns**: Code patterns that lead to the degradation of performance, reliability, or maintainability.
