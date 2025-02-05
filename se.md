@@ -42,7 +42,7 @@ Key ideas in that definition are the following
 - **(1)** Architecture is about what is *fundamental* to a software system; not every element, interconnection, or interface is considered fundamental.
 - **(2)** Architecture considers a system *in its environment*. Much like building architecture, software architecture is outward-looking; it considers a system’s context beyond its boundaries including the people, organizations, software, hardware and other devices with which the system must interact.
 
-> Architecture is the fundamental design of a system that allows colleagues to understand its structure, behavior, and interactions.
+> Architecture is the aspect of a system's design that allows colleagues to understand the system's structure, behavior, and interactions.
 > 
 > maxim-ge
 
