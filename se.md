@@ -35,6 +35,13 @@ SWEBOK:
 - The Guide to the Software Engineering Body of Knowledge (SWEBOK Guide), published by the IEEE Computer Society (IEEE CS), represents the current state of generally accepted, consensus-based knowledge emanating from the interplay between software engineering theory and practice. Its objectives include the provision of guidance for learners, researchers, and practitioners to identify and share a common understanding of “generally accepted knowledge” in software engineering, defining the boundary between software engineering and related disciplines, and providing a foundation for certifications and educational curricula.
 - [An Overview of the SWEBOK Guide](https://sebokwiki.org/wiki/An_Overview_of_the_SWEBOK_Guide)
 
+## Architecture
+
+**Architecture** (of a (sub)system). Fundamental concepts or properties of a system in its environment embodied in its elements, relationships, and in the principles of its design and evolution.
+Key ideas in that definition are the following
+- **(1)** Architecture is about what is *fundamental* to a software system; not every element, interconnection, or interface is considered fundamental.
+- **(2)** Architecture considers a system *in its environment*. Much like building architecture, software architecture is outward-looking; it considers a system’s context beyond its boundaries including the people, organizations, software, hardware and other devices with which the system must interact.
+
 ## Dynamic anti-patterns
 
 **Dynamic anti-patterns**: Code patterns that lead to the degradation of performance, reliability, or maintainability.
@@ -103,6 +110,7 @@ Cause: Dynamic anti-patterns often stem from poorly designed concurrency control
         // Logic populates `*fld`...
         return true, nil
     }
+    ```
 
 ---
 
@@ -207,6 +215,106 @@ Cause: Dynamic anti-patterns often stem from poorly designed concurrency control
     - Consolidate or batch requests
     - Employ service mesh or gateway to manage concurrency and rate-limiting
 
+## Software Engineering & AI
+
+**Software Engineering and Software Development Process**:
+```mermaid
+graph TD
+    DevProc:::G
+    subgraph DevProc["Development Process"]
+        Requirements:::B
+        Architecture:::B
+        Design:::B
+        Construction:::B
+        Testing:::B
+        Requirements --> Architecture
+        Architecture --> Design
+        Design --> Construction
+        Construction --> Testing
+    end
+    classDef B fill:#FFFFB5,color:#333
+    classDef S fill:#B5FFFF,color:#333
+    classDef H fill:#C9E7B7,color:#333
+    classDef G fill:#ffffff15, stroke:#999, stroke-width:2px, stroke-dasharray: 5 5    
+```
+
+**Using AI in Software Development Process**:
+```mermaid
+graph TD
+
+  %% Entities =================================
+  Engineer["@ Engineer"]:::B
+  Engineer2["@ Engineer"]:::B
+  AI["@ AI"]:::B
+
+  DraftRequirements["Draft Requirements"]:::H
+  DraftArchitecture["Draft Architecture/Design"]:::H
+  Prompts["Prompts"]:::H
+  
+
+  DCode["Draft Code"]:::S
+  DTests["Draft Tests"]:::S
+
+  Results:::G
+  subgraph "Results"
+    README["README.md"]:::H
+    Code["Code"]:::S
+    Tests["Tests"]:::S
+    Requirements["Requirements"]:::H
+    Architecture["Architecture/Design"]:::H
+  end
+
+
+  %% Relations =================================
+  Engineer --> |prepares| DraftRequirements
+  Engineer --> |prepares| DraftArchitecture
+  
+  DraftRequirements --> AI
+  DraftArchitecture --> AI
+  AI --> DCode
+  AI --> DTests
+  AI --> README
+  AI --> Requirements
+  AI --> Architecture
+  Prompts --> AI
+  Engineer --> |prepares| Prompts
+
+  DTests --> Engineer2
+  DCode --> Engineer2
+  Engineer2 --> Code
+  Engineer2 --> Tests
+
+
+  classDef B fill:#FFFFB5,color:#333
+  classDef S fill:#B5FFFF,color:#333
+  classDef H fill:#C9E7B7,color:#333
+  classDef G fill:#ffffff15, stroke:#999, stroke-width:2px, stroke-dasharray: 5 5
+```
+
+**Draft Requirements**:
+- Concepts (text + static diagrams)
+- Functional design
+    - Use Cases
+    - Dynamic diagrams
+
+**Draft Architecture/Design**:
+- Components (static diagrams)
+- Use Case design (dynamic diagrams)
+
+**Static diagrams**:
+- ERD
+- [C4 model](https://github.com/voedger/voedger-docs/blob/main/concepts/notation.md)
+
+**Dynamic diagrams**:
+- Sequence diagram
+- DFD
+
+**Examples**:
+- [Sequences](https://github.com/voedger/voedger-internals/blob/bf2720cf6b90aba68ca3876f8dd0fbea4e667b73/server/design/sequences.md#L45-L46)
+
+
+
+
 ## Glossary
 
 **Backpressure** is a feedback mechanism where downstream components signal their processing capacity limits to upstream components, causing them to slow down or modify their data transmission rate to prevent system overload.
@@ -216,8 +324,6 @@ Cause: Dynamic anti-patterns often stem from poorly designed concurrency control
 **Design** is the process of crafting solutions by organizing elements to meet specific goals.
 
 **Polling** is a technique where a system repeatedly checks for state changes, data availability, or conditions at fixed intervals rather than receiving notifications when changes occur.
-
-**Software Architecture** refers to the high-level structures of a software system and the discipline of creating such structures and systems. Each structure comprises software elements, relations among them, and properties of both elements and relations.
 
 **Software Design** 
     - v1. is the process of blueprinting defining software architecture, components, interfaces, and other characteristics to satisfy specified requirements. It includes making decisions about software design patterns, algorithms, data structures, and more.
