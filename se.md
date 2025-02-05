@@ -317,8 +317,6 @@ graph TD
 - [Sequences](https://github.com/voedger/voedger-internals/blob/bf2720cf6b90aba68ca3876f8dd0fbea4e667b73/server/design/sequences.md#L45-L46)
 
 
-
-
 ## Glossary
 
 **Backpressure** is a feedback mechanism where downstream components signal their processing capacity limits to upstream components, causing them to slow down or modify their data transmission rate to prevent system overload.
