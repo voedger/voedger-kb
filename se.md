@@ -139,15 +139,18 @@ graph TD
   classDef G fill:#ffffff15, stroke:#999, stroke-width:2px, stroke-dasharray: 5 5
 ```
 
-**Draft Requirements**:
+**Requirements**:
 - Concepts (text + static diagrams)
+- Principles/Constraints (text)
 - Functional design
     - Use Cases
     - Dynamic diagrams
 
-**Draft Architecture/Technical Design**:
+**Architecture/Technical Design**:
+- Concepts (text + static diagrams)
+- Principles/Constraints (text)
 - Components (static diagrams)
-- Use Case design (dynamic diagrams)
+- Use Case technical design (dynamic diagrams)
 
 **Static diagrams**:
 - [ERD](https://mermaid.js.org/syntax/entityRelationshipDiagram.html)
