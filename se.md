@@ -252,7 +252,7 @@ graph TD
   AI["@ AI"]:::B
 
   DraftRequirements["Draft Requirements"]:::H
-  DraftArchitecture["Draft Architecture/Design"]:::H
+  DraftArchitecture["Draft Arch./Tech Design"]:::H
   Prompts["Prompts"]:::H
   
 
@@ -265,7 +265,7 @@ graph TD
     Code["Code"]:::S
     Tests["Tests"]:::S
     Requirements["Requirements"]:::H
-    Architecture["Architecture/Design"]:::H
+    Architecture["Arch./Tech. Design"]:::H
   end
 
 
@@ -301,7 +301,7 @@ graph TD
     - Use Cases
     - Dynamic diagrams
 
-**Draft Architecture/Design**:
+**Draft Architecture/Technical Design**:
 - Components (static diagrams)
 - Use Case design (dynamic diagrams)
 
