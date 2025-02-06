@@ -58,6 +58,109 @@ SWEBOK:
 >
 > *SWEEBOK*
 
+## Software Engineering & AI
+
+**Software Engineering and Software Development Process**:
+```mermaid
+graph TD
+    DevProc:::G
+    subgraph DevProc["Development Process"]
+        Requirements:::B
+        Architecture:::B
+        Design:::B
+        Construction:::B
+        Testing:::B
+        Requirements --> Architecture
+        Architecture --> Design
+        Design --> Construction
+        Construction --> Testing
+    end
+    classDef B fill:#FFFFB5,color:#333
+    classDef S fill:#B5FFFF,color:#333
+    classDef H fill:#C9E7B7,color:#333
+    classDef G fill:#ffffff15, stroke:#999, stroke-width:2px, stroke-dasharray: 5 5    
+```
+
+**Using AI in Software Development Process**:
+```mermaid
+graph TD
+
+  %% Entities =================================
+  Engineer["@ Engineer"]:::B
+  Engineer2["@ Engineer"]:::B
+  AI["@ AI"]:::B
+
+  DraftRequirements["Draft Requirements"]:::H
+  DraftArchitecture["Draft Arch./Tech Design"]:::H
+  Prompts["Prompts"]:::H
+  Interfaces["Interfaces"]:::S
+  
+
+  DCode["Draft Code"]:::S
+  DTests["Draft Tests"]:::S
+
+  Results:::G
+  subgraph "Results"
+    README["README.md"]:::H
+    Code["Code"]:::S
+    Tests["Tests"]:::S
+    Requirements["Requirements"]:::H
+    Architecture["Arch./Tech. Design"]:::H
+  end
+
+
+  %% Relations =================================
+  Engineer -.-> DraftRequirements
+  Engineer -.-> DraftArchitecture
+  Engineer -.-> Interfaces
+  Engineer -.-> Prompts
+  
+  Interfaces -.-> AI
+  DraftRequirements -.-> AI
+  DraftArchitecture -.-> AI
+  AI -.-> DCode
+  AI -.-> DTests
+  AI -.-> README
+  AI -.-> Requirements
+  AI -.-> Architecture
+  Prompts -.-> AI
+
+
+  Interfaces -.-> Code
+  DTests -.-> Engineer2
+  DCode -.-> Engineer2
+  Engineer2 -.-> Code
+  Engineer2 -.-> Tests
+
+
+  classDef B fill:#FFFFB5,color:#333
+  classDef S fill:#B5FFFF,color:#333
+  classDef H fill:#C9E7B7,color:#333
+  classDef G fill:#ffffff15, stroke:#999, stroke-width:2px, stroke-dasharray: 5 5
+```
+
+**Draft Requirements**:
+- Concepts (text + static diagrams)
+- Functional design
+    - Use Cases
+    - Dynamic diagrams
+
+**Draft Architecture/Technical Design**:
+- Components (static diagrams)
+- Use Case design (dynamic diagrams)
+
+**Static diagrams**:
+- [ERD](https://mermaid.js.org/syntax/entityRelationshipDiagram.html)
+- [Class diagram](https://mermaid.js.org/syntax/classDiagram.html). An example: [appdef](https://github.com/voedger/voedger/blob/1bab84681330e28922a80203dfd86df19f9a2454/pkg/appdef/README.md).
+- [C4 model](https://github.com/voedger/voedger-docs/blob/main/concepts/notation.md)
+
+**Dynamic diagrams**:
+- [Sequence diagram](https://mermaid.js.org/syntax/sequenceDiagram.html)
+- [DFD](https://mermaid.js.org/syntax/flowchart.html)
+
+**Examples**:
+- [Sequences](https://github.com/voedger/voedger-internals/blob/bf2720cf6b90aba68ca3876f8dd0fbea4e667b73/server/design/sequences.md#L45-L46)
+
 ## Dynamic anti-patterns
 
 **Dynamic anti-patterns**: Code patterns that lead to the degradation of performance, reliability, or maintainability.
@@ -230,103 +333,6 @@ Cause: Dynamic anti-patterns often stem from poorly designed concurrency control
     - Use caching or data aggregation patterns
     - Consolidate or batch requests
     - Employ service mesh or gateway to manage concurrency and rate-limiting
-
-## Software Engineering & AI
-
-**Software Engineering and Software Development Process**:
-```mermaid
-graph TD
-    DevProc:::G
-    subgraph DevProc["Development Process"]
-        Requirements:::B
-        Architecture:::B
-        Design:::B
-        Construction:::B
-        Testing:::B
-        Requirements --> Architecture
-        Architecture --> Design
-        Design --> Construction
-        Construction --> Testing
-    end
-    classDef B fill:#FFFFB5,color:#333
-    classDef S fill:#B5FFFF,color:#333
-    classDef H fill:#C9E7B7,color:#333
-    classDef G fill:#ffffff15, stroke:#999, stroke-width:2px, stroke-dasharray: 5 5    
-```
-
-**Using AI in Software Development Process**:
-```mermaid
-graph TD
-
-  %% Entities =================================
-  Engineer["@ Engineer"]:::B
-  Engineer2["@ Engineer"]:::B
-  AI["@ AI"]:::B
-
-  DraftRequirements["Draft Requirements"]:::H
-  DraftArchitecture["Draft Arch./Tech Design"]:::H
-  Prompts["Prompts"]:::H
-  
-
-  DCode["Draft Code"]:::S
-  DTests["Draft Tests"]:::S
-
-  Results:::G
-  subgraph "Results"
-    README["README.md"]:::H
-    Code["Code"]:::S
-    Tests["Tests"]:::S
-    Requirements["Requirements"]:::H
-    Architecture["Arch./Tech. Design"]:::H
-  end
-
-
-  %% Relations =================================
-  Engineer --> |prepares| DraftRequirements
-  Engineer --> |prepares| DraftArchitecture
-  
-  DraftRequirements --> AI
-  DraftArchitecture --> AI
-  AI --> DCode
-  AI --> DTests
-  AI --> README
-  AI --> Requirements
-  AI --> Architecture
-  Prompts --> AI
-  Engineer --> |prepares| Prompts
-
-  DTests --> Engineer2
-  DCode --> Engineer2
-  Engineer2 --> Code
-  Engineer2 --> Tests
-
-
-  classDef B fill:#FFFFB5,color:#333
-  classDef S fill:#B5FFFF,color:#333
-  classDef H fill:#C9E7B7,color:#333
-  classDef G fill:#ffffff15, stroke:#999, stroke-width:2px, stroke-dasharray: 5 5
-```
-
-**Draft Requirements**:
-- Concepts (text + static diagrams)
-- Functional design
-    - Use Cases
-    - Dynamic diagrams
-
-**Draft Architecture/Technical Design**:
-- Components (static diagrams)
-- Use Case design (dynamic diagrams)
-
-**Static diagrams**:
-- ERD
-- [C4 model](https://github.com/voedger/voedger-docs/blob/main/concepts/notation.md)
-
-**Dynamic diagrams**:
-- Sequence diagram
-- DFD
-
-**Examples**:
-- [Sequences](https://github.com/voedger/voedger-internals/blob/bf2720cf6b90aba68ca3876f8dd0fbea4e667b73/server/design/sequences.md#L45-L46)
 
 
 ## Glossary
