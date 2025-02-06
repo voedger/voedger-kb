@@ -37,24 +37,26 @@ SWEBOK:
 
 ## Architecture
 
-**Architecture** (of a (sub)system). Fundamental concepts or properties of a system in its environment embodied in its elements, relationships, and in the principles of its design and evolution.
-Key ideas in that definition are the following
-- **(1)** Architecture is about what is *fundamental* to a software system; not every element, interconnection, or interface is considered fundamental.
-- **(2)** Architecture considers a system *in its environment*. Much like building architecture, software architecture is outward-looking; it considers a system’s context beyond its boundaries including the people, organizations, software, hardware and other devices with which the system must interact.
+> **Architecture** (of a (sub)system). Fundamental concepts or properties of a system in its environment embodied in its elements, relationships, and in the principles of its design and evolution.
+> Key ideas in that definition are the following
+> - **(1)** Architecture is about what is *fundamental* to a software system; not every element, interconnection, or interface is considered fundamental.
+> - **(2)** Architecture considers a system *in its environment*. Much like building architecture, software architecture is outward-looking; it considers a system’s context beyond its boundaries including the people, organizations, software, hardware and other devices with which the system must interact.
+> 
+> *SWEEBOK*
 
 > Architecture is the aspect of a system's design that allows to understand the system's guiding principles, major components, interactions and behavior.
 > 
-> maxim-ge
+> *maxim-ge*
 
 ## Design
 
 > **Software Design** is a practical process of transforming a problem statement into a solution statement.
 >
-> SWEEBOK
+> *SWEEBOK*
 
 > **Software design** is the transformation of customer and other requirements, needs, and concerns into implementable design specifications.
 >
-> SWEEBOK
+> *SWEEBOK*
 
 ## Dynamic anti-patterns
 
