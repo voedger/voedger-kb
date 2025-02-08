@@ -50,13 +50,36 @@ SWEBOK:
 
 ## Design
 
+Definition1:
 > **Software Design** is a practical process of transforming a problem statement into a solution statement.
 >
-> *SWEEBOK*
+>*SWEEBOK*
 
-> **Software design** is the transformation of customer and other requirements, needs, and concerns into implementable design specifications.
+Definition2:
+>**Software design** is the transformation of customer and other requirements, needs, and concerns into implementable design specifications.
 >
-> *SWEEBOK*
+>*SWEEBOK*
+
+## SOLID Principles
+
+SOLID stands for five design principles intended to make software designs more understandable, flexible, and maintainable.
+
+1. **S**ingle Responsibility Principle
+1. **O**pen/Closed Principle
+1. **L**iskov Substitution Principle
+1. **I**nterface Segregation Principle
+1. **D**ependency Inversion Principle
+
+**S**ingle-responsibility principle (SRP) states that "there should never be more than one reason for a class to change." In other words, every class should have only one responsibility.
+
+**D**ependency inversion principle (DIP) states to depend upon abstractions, [not] concretes.
+
+### Practical example
+
+It is necessary to design an architecture for the following [requirements](https://github.com/voedger/voedger-internals/blob/371619f88fe8029ea7fce575e934b6b50b5bd21c/server/design/sequences.md?plain=1#L12:L82).
+
+- [Attempt1](https://chatgpt.com/share/67a79fa1-89ac-800b-aab9-fe00191e2317)
+- [Attempt2](https://chatgpt.com/share/67a53e8c-3a08-800b-9d16-5cdef1fe7c5c)
 
 ## Software Engineering & AI
 
@@ -230,7 +253,7 @@ Cause: Dynamic anti-patterns often stem from poorly designed concurrency control
       return true, fld, nil
   }
   ```
-  
+
   Here, the slice `fld` is allocated but is not reused or managed efficiently, leading to avoidable heap allocation.
 
 - **Better approach:**  
