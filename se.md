@@ -60,7 +60,7 @@ Definition2:
 >
 >*SWEEBOK*
 
-## SOLID Principles
+## SOLID principles
 
 SOLID stands for five design principles intended to make software designs more understandable, flexible, and maintainable.
 
@@ -74,7 +74,7 @@ SOLID stands for five design principles intended to make software designs more u
 
 **D**ependency inversion principle (DIP) states to depend upon abstractions, [not] concretes.
 
-### Practical example
+### Practical example (Sequences)
 
 It is necessary to design an architecture for the following [requirements](https://github.com/voedger/voedger-internals/blob/371619f88fe8029ea7fce575e934b6b50b5bd21c/server/design/sequences.md?plain=1#L12:L82).
 
