@@ -6,10 +6,10 @@ This document provides guidelines for Go-based development at Voedger project.
 
 - [Effective Go](https://go.dev/doc/effective_go)
 - [Go Proverbs](https://go-proverbs.github.io/)
-    - Rob Pike’s Go Proverbs
-        - [Part One](https://golangprojectstructure.com/rob-pike-go-proverbs/)
-        - [Part Two](https://golangprojectstructure.com/rob-pike-go-proverbs-2/)
-        - [Part Three)](https://golangprojectstructure.com/rob-pike-go-proverbs-3/)
+  - Rob Pike’s Go Proverbs
+    - [Part One](https://golangprojectstructure.com/rob-pike-go-proverbs/)
+    - [Part Two](https://golangprojectstructure.com/rob-pike-go-proverbs-2/)
+    - [Part Three)](https://golangprojectstructure.com/rob-pike-go-proverbs-3/)
 - [10 things you (probably) don't know about Go](https://go.dev/talks/2012/10things.slide)
 - https://go.dev/blog/subtests
 - https://go101.org/article/type-system-overview.html
@@ -37,6 +37,7 @@ Test files shall be in the `<testing-package>_test` package, whenever posisble (
 ## Avoid anti-patterns
 
 [Dynamic anti-patterns](se.md#dynamic-anti-patterns):
+
 - Busy Waiting (Spin Waiting)
 - Goroutine/Task/Thread Leak
 - Heap Escape Without Reuse (especially in hot paths)

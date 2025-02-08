@@ -7,7 +7,6 @@ to software (ISO/IEC/IEEE, “ISO/IEC/IEEE 24765:2017 Systems and Software Engin
 - **Systematic approach**: An approach that follows the system of predefined principles and procedures
 - **Why**: To achieve consistent (stable) results
 
-
 ## Knowledge Areas
 
 According to  [SWEBOK, Guide to the Software Engineering Body of Knowledge v4.0](https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf):
@@ -32,6 +31,7 @@ According to  [SWEBOK, Guide to the Software Engineering Body of Knowledge v4.0]
 - Engineering Foundations
 
 SWEBOK:
+
 - The Guide to the Software Engineering Body of Knowledge (SWEBOK Guide), published by the IEEE Computer Society (IEEE CS), represents the current state of generally accepted, consensus-based knowledge emanating from the interplay between software engineering theory and practice. Its objectives include the provision of guidance for learners, researchers, and practitioners to identify and share a common understanding of “generally accepted knowledge” in software engineering, defining the boundary between software engineering and related disciplines, and providing a foundation for certifications and educational curricula.
 - [An Overview of the SWEBOK Guide](https://sebokwiki.org/wiki/An_Overview_of_the_SWEBOK_Guide)
 
@@ -61,6 +61,7 @@ SWEBOK:
 ## Software Engineering & AI
 
 **Software Engineering and Software Development Process**:
+
 ```mermaid
 graph TD
     DevProc:::G
@@ -82,6 +83,7 @@ graph TD
 ```
 
 **Using AI in Software Development Process**:
+
 ```mermaid
 graph TD
 
@@ -140,28 +142,33 @@ graph TD
 ```
 
 **Requirements**:
+
 - Concepts (text + static diagrams)
 - Principles/Constraints (text)
 - Functional design
-    - Use Cases
-    - Dynamic diagrams
+  - Use Cases
+  - Dynamic diagrams
 
 **Architecture/Technical Design**:
+
 - Concepts (text + static diagrams)
 - Principles/Constraints (text)
 - Components (static diagrams)
 - Use Case technical design (dynamic diagrams)
 
 **Static diagrams**:
+
 - [ERD](https://mermaid.js.org/syntax/entityRelationshipDiagram.html)
 - [Class diagram](https://mermaid.js.org/syntax/classDiagram.html). An example: [appdef](https://github.com/voedger/voedger/blob/1bab84681330e28922a80203dfd86df19f9a2454/pkg/appdef/README.md).
 - [C4 model](https://github.com/voedger/voedger-docs/blob/main/concepts/notation.md)
 
 **Dynamic diagrams**:
+
 - [Sequence diagram](https://mermaid.js.org/syntax/sequenceDiagram.html)
 - [DFD](https://mermaid.js.org/syntax/flowchart.html)
 
 **Examples**:
+
 - [Sequences](https://github.com/voedger/voedger-internals/blob/bf2720cf6b90aba68ca3876f8dd0fbea4e667b73/server/design/sequences.md#L45-L46)
 
 ## Dynamic anti-patterns
@@ -178,6 +185,7 @@ Cause: Dynamic anti-patterns often stem from poorly designed concurrency control
 ---
 
 ### Busy Waiting (Spin Waiting)
+
 - **What it is:** A thread (or process) constantly checks for a condition in a loop.
 - **Why it’s bad:** Consumes CPU cycles unnecessarily, leading to higher resource utilization and possible starvation of other threads.
 - **Better approach:** Use proper synchronization constructs like semaphores, mutexes, events, or condition variables that allow the waiting thread to sleep until notified.
@@ -213,6 +221,7 @@ Cause: Dynamic anti-patterns often stem from poorly designed concurrency control
   - Missed optimization opportunities: Objects that could stay on the stack are cheaper and faster to allocate and deallocate.
 
 - **Example:**  
+
   ```go
   func (bp *borrowedPartition) IsOperationAllowed(ws appdef.IWorkspace, op appdef.OperationKind, res appdef.QName, fld []appdef.FieldName, roles []appdef.QName) (bool, []appdef.FieldName, error) {
       // `fld` is allocated but not reused, causing a heap escape
@@ -221,10 +230,12 @@ Cause: Dynamic anti-patterns often stem from poorly designed concurrency control
       return true, fld, nil
   }
   ```
+  
   Here, the slice `fld` is allocated but is not reused or managed efficiently, leading to avoidable heap allocation.
 
 - **Better approach:**  
   - **Avoid slice reallocation inside functions:** Use pre-allocated slices or pass them in as pointers when the caller can reuse them.  
+
     ```go
     func (bp *borrowedPartition) IsOperationAllowed(ws appdef.IWorkspace, op appdef.OperationKind, res appdef.QName, fld *[]appdef.FieldName, roles []appdef.QName) (bool, error) {
         // Reuse the passed-in slice
@@ -237,106 +248,114 @@ Cause: Dynamic anti-patterns often stem from poorly designed concurrency control
 ---
 
 ### Memory Leaks & Resource Leaks
+
 - **What it is:** Failing to release memory or other resources (like sockets, file handles) after use, resulting in gradually growing usage.
 - **Why it’s bad:**
-    - Eventually starves the system of memory or OS handles
-    - Leads to performance degradation and potential crashes over time
+  - Eventually starves the system of memory or OS handles
+  - Leads to performance degradation and potential crashes over time
 - **Better approach:**
-    - Use try-with-resources, RAII (Resource Acquisition Is Initialization), or automatic memory management where possible
-    - Ensure you always close or release resources in finally blocks (in languages where manual resource management is needed)
+  - Use try-with-resources, RAII (Resource Acquisition Is Initialization), or automatic memory management where possible
+  - Ensure you always close or release resources in finally blocks (in languages where manual resource management is needed)
 
 ---
 
 ### Sleep-Based Polling
+
 - **What it is:** The program periodically calls `sleep(...)` (or similar) to wait before re-checking a condition (e.g., “sleep for 500ms and check again”).
 - **Why it’s bad:**
-    - Creates arbitrary latency (the condition might be ready right after the thread goes to sleep)
-    - Wastes CPU when the sleep intervals are too short, or increases response time when intervals are too long
+  - Creates arbitrary latency (the condition might be ready right after the thread goes to sleep)
+  - Wastes CPU when the sleep intervals are too short, or increases response time when intervals are too long
 - **Better approach:** Use event-driven approaches or blocking I/O. Let threads block on condition variables or use asynchronous callbacks to be notified.
 
 ---
 
 ### Unbounded Concurrency
+
 - **What it is:** A system that creates new threads or processes without limits for each incoming request or task, lacking mechanisms to control resource consumption.
 - **Why it's bad:**
-    - Can exhaust system resources (CPU, memory, file descriptors)
-    - Leads to thrashing when too many threads compete for resources
-    - Performance degradation due to excessive context switching
-    - May cause system crashes or unresponsiveness
-    - Unpredictable behavior under high load
+  - Can exhaust system resources (CPU, memory, file descriptors)
+  - Leads to thrashing when too many threads compete for resources
+  - Performance degradation due to excessive context switching
+  - May cause system crashes or unresponsiveness
+  - Unpredictable behavior under high load
 - **Better approach:**
-    - Implement thread pools with fixed or configurable maximum sizes
-    - Use work queues to manage incoming tasks
-    - Apply backpressure mechanisms to handle overload
-    - Set appropriate resource limits and monitoring
-    - Consider non-threaded approaches like event loops or async I/O
+  - Implement thread pools with fixed or configurable maximum sizes
+  - Use work queues to manage incoming tasks
+  - Apply backpressure mechanisms to handle overload
+  - Set appropriate resource limits and monitoring
+  - Consider non-threaded approaches like event loops or async I/O
 
 ---
 
 ### Lock Contention & Lock Convoys
+
 - **What it is:** Multiple threads frequently compete for the same lock, causing threads to line up waiting (a "convoy").
 - **Why it's bad:**
-    - Throttles concurrency as threads become serialized around the lock
-    - Performance degrades as more threads join the convoy
-    - Creates unnecessary context switching overhead
-    - Can lead to priority inversion problems
-    - Increases overall system latency
+  - Throttles concurrency as threads become serialized around the lock
+  - Performance degrades as more threads join the convoy
+  - Creates unnecessary context switching overhead
+  - Can lead to priority inversion problems
+  - Increases overall system latency
+
 - **Better approach:**
-    - Reduce shared data or protected regions
-    - Use more fine-grained locks or lock-free data structures
-    - Redesign critical sections to be shorter
-    - Consider alternative synchronization mechanisms like read-write locks
-    - Implement lock striping for better concurrency
-    - Use thread-local storage where possible
+  - Reduce shared data or protected regions
+  - Use more fine-grained locks or lock-free data structures
+  - Redesign critical sections to be shorter
+  - Consider alternative synchronization mechanisms like read-write locks
+  - Implement lock striping for better concurrency
+  - Use thread-local storage where possible
 
 ---
 
 ### Excessive or Repeated Resource Acquisition
+
 - **What it is:** A loop or frequently invoked method repeatedly acquires the same expensive resource (database connection, file handle, etc.) instead of reusing or pooling.
 - **Why it’s bad:** Causes significant overhead from repeated opens/closes or handshakes.
 - **Better approach:**
-    - Use resource pooling (e.g., connection pools, object pools)
-    - Cache resources if they are reusable
+  - Use resource pooling (e.g., connection pools, object pools)
+  - Cache resources if they are reusable
 
 ---
 
 ### Thundering Herd
+
 - **What it is:** Multiple concurrent processes/threads wake up to handle an event, but only one can actually process it, causing others to waste resources attempting to handle the same event.
 - **Why it's bad:**
-    - Wastes system resources as multiple processes compete unnecessarily
-    - Can cause significant performance degradation under high load
-    - Creates unnecessary context switching overhead
-    - May lead to resource exhaustion in extreme cases
+  - Wastes system resources as multiple processes compete unnecessarily
+  - Can cause significant performance degradation under high load
+  - Creates unnecessary context switching overhead
+  - May lead to resource exhaustion in extreme cases
 - **Better approach:**
-    - Implement leader/follower pattern where one process handles events
-    - Use semaphores instead of regular mutex locks
-    - Implement request coalescing to handle multiple similar requests as one
-    - Design systems to wake only the necessary number of workers
-    - Use event notification mechanisms that support exclusive wake-ups
+  - Implement leader/follower pattern where one process handles events
+  - Use semaphores instead of regular mutex locks
+  - Implement request coalescing to handle multiple similar requests as one
+  - Design systems to wake only the necessary number of workers
+  - Use event notification mechanisms that support exclusive wake-ups
 
 ---
 
 ### Cascading Failures
+
 - **What it is:** A failure in one component causes increased load or resource strain in others, which in turn fail and propagate the problem system-wide.
 - **Why it’s bad:**
-    - Produces a domino effect of outages or slowdowns
+  - Produces a domino effect of outages or slowdowns
 - **Better approach:**
-    - Implement circuit breakers or fallback mechanisms
-    - Design the system with bulkheads (isolation boundaries) and degrade gracefully
-    - Monitor resource usage and errors to trigger fail-safe modes early
+  - Implement circuit breakers or fallback mechanisms
+  - Design the system with bulkheads (isolation boundaries) and degrade gracefully
+  - Monitor resource usage and errors to trigger fail-safe modes early
 
 ---
 
 ### Request/Response Amplification
+
 - **What it is:** A single incoming request causes an explosion of downstream calls or queries (e.g., microservices that keep fanning out).
 - **Why it’s bad:**
-    - Can cause high latency or resource use
-    - Makes the system brittle under load spikes
+  - Can cause high latency or resource use
+  - Makes the system brittle under load spikes
 - **Better approach:**
-    - Use caching or data aggregation patterns
-    - Consolidate or batch requests
-    - Employ service mesh or gateway to manage concurrency and rate-limiting
-
+  - Use caching or data aggregation patterns
+  - Consolidate or batch requests
+  - Employ service mesh or gateway to manage concurrency and rate-limiting
 
 ## Glossary
 
@@ -348,6 +367,6 @@ Cause: Dynamic anti-patterns often stem from poorly designed concurrency control
 
 **Polling** is a technique where a system repeatedly checks for state changes, data availability, or conditions at fixed intervals rather than receiving notifications when changes occur.
 
-**Software Design** 
+**Software Design**
     - v1. is the process of blueprinting defining software architecture, components, interfaces, and other characteristics to satisfy specified requirements. It includes making decisions about software design patterns, algorithms, data structures, and more.
     - v2. detailed implementation of the software, including the selection of algorithms, data structures, and modules to fulfill the architecture's specifications.
