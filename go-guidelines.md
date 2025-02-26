@@ -50,3 +50,19 @@ If possible create testable examples for your code. They are a great way to docu
 - [https://cs.opensource.google/go/src/encoding/binary/example_test.go](https://cs.opensource.google/go/go/+/refs/tags/go1.20.5:src/encoding/binary/example_test.go;l=14;drc=2580d0e08d5e9f979b943758d3c49877fb2324cb)
 - https://pkg.go.dev/encoding/binary#example-Write
 - [voedger/pkg/in10nmem/example_test.go](https://github.com/voedger/voedger/blob/15ef848eecdc1950a6eba71732991012d509be18/pkg/in10nmem/example_test.go#L21)
+
+## Avoid commented-out and dead code
+
+![alt text](images/deadcode.png)
+
+## Avoid tightly coupling between packages
+
+Even in tests:
+
+![alt text](images/coupling.png)
+
+If it is necessary to integrally test the package with injected dependencies:
+
+- Create a test suite that tests the interface (IElections, in this case)
+- Use this test suite in the package (elections, in this case)
+- Use this test suite in the packages where injections are provided
