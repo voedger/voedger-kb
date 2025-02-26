@@ -12,8 +12,8 @@ This document outlines the development guidelines for Go-based projects at Voedg
     - [Part Three)](https://golangprojectstructure.com/rob-pike-go-proverbs-3/)
 - [google.github.io/styleguide/go/decisions.html](https://google.github.io/styleguide/go/decisions.html)
 - [10 things you (probably) don't know about Go](https://go.dev/talks/2012/10things.slide)
-- https://go.dev/blog/subtests
-- https://go101.org/article/type-system-overview.html
+- [Subtests in Go](https://go.dev/blog/subtests)
+- [Go Type System Overview](https://go101.org/article/type-system-overview.html)
 
 ## Package Structure
 
@@ -25,13 +25,13 @@ All implementations involving concurrency patterns (goroutines, sync package) mu
 
 ## Testing Guidelines
 
-### testdata Directory
+### `testdata` Directory
 
-The `testdata` directory name is reserved by the Go toolchain. Files in this directory are ignored during build and analysis, making it suitable for test fixtures including Go source files.
+The `testdata` directory name is reserved by the Go toolchain. Files in this directory are ignored during build and analysis, making it suitable for test fixtures, including Go source files.
 
 ### Black-box Testing
 
-Implement tests in the `<package-name>_test` package to ensure black-box testing principles.
+Implement tests in the `<package-name>_test` package to adhere to black-box testing principles.
 
 ### Testable Examples
 
@@ -39,8 +39,8 @@ Prioritize creating testable examples to demonstrate code usage:
 
 - [Official Go Examples Guide](https://go.dev/blog/examples)
 - [Example: binary package tests](https://cs.opensource.google/go/go/+/refs/tags/go1.20.5:src/encoding/binary/example_test.go)
-- [Example: binary.Write](https://pkg.go.dev/encoding/binary#example-Write)
-- [Example: in10nmem tests](https://github.com/voedger/voedger/blob/15ef848eecdc1950a6eba71732991012d509be18/pkg/in10nmem/example_test.go#L21)
+- [Example: `binary.Write`](https://pkg.go.dev/encoding/binary#example-Write)
+- [Example: `in10nmem` tests](https://github.com/voedger/voedger/blob/15ef848eecdc1950a6eba71732991012d509be18/pkg/in10nmem/example_test.go#L21)
 
 ## Code Quality
 
@@ -66,16 +66,16 @@ Maintain loose coupling between packages, including test suites.
 
 <kbd>![Coupling example](images/coupling.png)</kbd>
 
-For necessary dependency injection testing:
+For dependency injection testing:
 
-In the interface package:
+**In the interface package:**
 
-- Declare the interface (`IElections`) and all possible injections (`ITTLStorage`)
-- Create an interface test suite (e.g., `IElectionsTestSuite`)
-- Create mock implementations for all possible injections
-- Create a reference implementation for the interface
-- Use `IElectionsTestSuite` to test the reference implementation
+- Declare the interface (`IElections`) and all possible injections (`ITTLStorage`).
+- Create an interface test suite (e.g., `IElectionsTestSuite`).
+- Create mock implementations for all possible injections.
+- Create a reference implementation for the interface.
+- Use `IElectionsTestSuite` to test the reference implementation.
 
-In the packages that inject dependencies:
+**In packages that inject dependencies:**
 
 - Use `IElectionsTestSuite` to test the implementation with specific injections.
