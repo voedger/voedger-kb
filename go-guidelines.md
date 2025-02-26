@@ -1,12 +1,12 @@
-# Go-based development guidelines
+# Go Development Guidelines
 
-This document provides guidelines for Go-based development at Voedger project.
+This document outlines the development guidelines for Go-based projects at Voedger.
 
 ## Foundations and Key References
 
 - [Effective Go](https://go.dev/doc/effective_go)
 - [Go Proverbs](https://go-proverbs.github.io/)
-  - Rob Pike’s Go Proverbs
+  - Rob Pike's Go Proverbs Series:
     - [Part One](https://golangprojectstructure.com/rob-pike-go-proverbs/)
     - [Part Two](https://golangprojectstructure.com/rob-pike-go-proverbs-2/)
     - [Part Three)](https://golangprojectstructure.com/rob-pike-go-proverbs-3/)
@@ -15,55 +15,67 @@ This document provides guidelines for Go-based development at Voedger project.
 - https://go.dev/blog/subtests
 - https://go101.org/article/type-system-overview.html
 
-## Go package structure
+## Package Structure
 
-- [guide: go package structure](https://github.com/voedger/kb/issues/45)
+- [Package Structure Guide](https://github.com/voedger/kb/issues/45)
 
-## Concurrency and review
+## Concurrency Review Requirements
 
-If a developer implements something related to concurrency (e.g., using goroutines or the sync package), a code review must be conducted by AI, too (e.g., ChatGPT). An [example](https://github.com/voedger/kb/issues/57).
+All implementations involving concurrency patterns (goroutines, sync package) must undergo both human and AI-assisted code review. See [example review](https://github.com/voedger/kb/issues/57).
 
-## testdata folder
+## Testing Guidelines
 
-`testdata` folder: name is special for the Go toolchain, which will ignore files in it (so you can place files named *.go there, for example, and they won't be built or analyzed)
+### testdata Directory
 
-## Avoid using .cmd files
+The `testdata` directory name is reserved by the Go toolchain. Files in this directory are ignored during build and analysis, making it suitable for test fixtures including Go source files.
 
-Do not use `.cmd` files, use `.sh` or `.bash`.
+### Black-box Testing
 
-## Black-box testing
+Implement tests in the `<package-name>_test` package to ensure black-box testing principles.
 
-Test files shall be in the `<testing-package>_test` package, whenever posisble (black-box testing).
+### Testable Examples
 
-## Avoid anti-patterns
+Prioritize creating testable examples to demonstrate code usage:
 
-[Dynamic anti-patterns](se.md#dynamic-anti-patterns):
+- [Official Go Examples Guide](https://go.dev/blog/examples)
+- [Example: binary package tests](https://cs.opensource.google/go/go/+/refs/tags/go1.20.5:src/encoding/binary/example_test.go)
+- [Example: binary.Write](https://pkg.go.dev/encoding/binary#example-Write)
+- [Example: in10nmem tests](https://github.com/voedger/voedger/blob/15ef848eecdc1950a6eba71732991012d509be18/pkg/in10nmem/example_test.go#L21)
+
+## Code Quality
+
+### Script Files
+
+Use `.sh` or `.bash` files instead of `.cmd` files.
+
+### Anti-patterns to Avoid
+
+Key dynamic anti-patterns:
 
 - Busy Waiting (Spin Waiting)
-- Goroutine/Task/Thread Leak
-- Heap Escape Without Reuse (especially in hot paths)
-
-## Testable Examples in Go
-
-If possible create testable examples for your code. They are a great way to document your code and provide examples of how to use it.
-
-- [Testable Examples in Go](https://go.dev/blog/examples)
-- [https://cs.opensource.google/go/src/encoding/binary/example_test.go](https://cs.opensource.google/go/go/+/refs/tags/go1.20.5:src/encoding/binary/example_test.go;l=14;drc=2580d0e08d5e9f979b943758d3c49877fb2324cb)
-- https://pkg.go.dev/encoding/binary#example-Write
-- [voedger/pkg/in10nmem/example_test.go](https://github.com/voedger/voedger/blob/15ef848eecdc1950a6eba71732991012d509be18/pkg/in10nmem/example_test.go#L21)
+- Goroutine/Task/Thread Leaks
+- Heap Escapes Without Reuse (critical in hot paths)
 
 ## Avoid commented-out and dead code
 
-![alt text](images/deadcode.png)
+<kbd>![Dead code example](images/deadcode.png)</kbd>
 
 ## Avoid tightly coupling between packages
 
-Even in tests:
+Maintain loose coupling between packages, including test suites.
 
-![alt text](images/coupling.png)
+<kbd>![Coupling example](images/coupling.png)</kbd>
 
-If it is necessary to integrally test the package with injected dependencies:
+For necessary dependency injection testing:
 
-- Create a test suite that tests the interface (IElections, in this case)
-- Use this test suite in the package (elections, in this case)
-- Use this test suite in the packages where injections are provided
+In the interface package:
+
+- Declare the interface (`IElections`) and all possible injections (`ITTLStorage`)
+- Create an interface test suite (e.g., `IElectionsTestSuite`)
+- Create mock implementations for all possible injections
+- Create a reference implementation for the interface
+- Use `IElectionsTestSuite` to test the reference implementation
+
+In the packages that inject dependencies:
+
+- Use `IElectionsTestSuite` to test the implementation with specific injections.
