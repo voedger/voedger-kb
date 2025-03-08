@@ -2,9 +2,9 @@
 
 This document outlines technical writing standards for Voedger projects, covering:
 
-- Source code comments
 - Requirements documentation
 - Technical design documentation
+- Source code comments
 
 ## About this document
 
