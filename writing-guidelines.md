@@ -6,33 +6,39 @@ This document outlines technical writing standards for Voedger projects, coverin
 - Requirements documentation
 - Technical design documentation
 
+## About this document
+
+This technical writing guide itself uses the RFC 2119 terminology (MUST, SHOULD, MAY) to indicate the importance level of each guideline:
+
+- MUST: Indicates an absolute requirement. Compliance is mandatory
+- SHOULD: Indicates a recommendation that may be ignored in particular circumstances after the implications are understood and carefully considered
+- MAY: Indicates an optional requirement that is truly optional and carries no recommendation
+- MUST NOT: Indicate practices that are absolutely prohibited in all Voedger documentation
+- SHOULD NOT: Indicate practices that are generally discouraged, though exceptions may exist with proper justification
+- MAY NOT: Indicate practices that are optional to prohibit, depending on specific project requirements
+
+Examples:
+
+- Writers MUST use sentence capitalization for section titles (required)
+- Code examples SHOULD include comments for complex operations (recommended)
+- Documentation pages MAY include diagrams when helpful (optional)
+- Writers MUST NOT include personally identifiable information in code examples (prohibited)
+- Code comments SHOULD NOT include implementation details that duplicate what the code already clearly shows (discouraged)
+- Documentation MAY NOT include version-specific screenshots if they're likely to become outdated quickly (optionally prohibited)
+
+References:
+
+- [RFC 2119](https://datatracker.ietf.org/doc/html/rfc2119)
+
 ## Definitions
 
 - **Sentence Capitalization Style**: A style that uses capital letters only for the first word of a sentence, proper nouns, and acronyms, while all other words remain lowercase
 - **Declarative Description**: Explains what a function does or achieves, using third-person verbs and complete sentences
 - **Imperative Description**: Describes how a function works step-by-step, using imperative verbs and bullet points
 
-## Requirement terminology
-
-When specifying requirements, use the following terms with their specific meanings:
-
-- **MUST**: Indicates an absolute requirement. Compliance is mandatory.
-- **SHOULD**: Indicates a recommendation that may be ignored in particular circumstances after the implications are understood and carefully considered.
-- **MAY**: Indicates an optional requirement that is truly optional and carries no recommendation.
-
-Example:
-
-- The system MUST validate all user input for security purposes
-- Response times SHOULD be under 200ms for optimal user experience
-- The application MAY provide alternative color themes for accessibility
-
-References:
-
-- [RFC 2119](https://datatracker.ietf.org/doc/html/rfc2119)
-
 ## Titles
 
-- Sentence capitalization style MUST be used **except** for document titles (e.g., "Technical Writing Guidelines") and explicitly defined terms
+- Sentence capitalization style MUST be used **except** for document titles (e.g., "Technical Writing Guidelines"), proper names and explicitly defined terms
 - Articles (a, an, the) SHOULD NOT be used in titles
 
 Correct examples:
@@ -42,8 +48,7 @@ Correct examples:
 
 Incorrect examples:
 
-- **Technical Design** *(Incorrect: Section titles use sentence capitalization.)*
-- This guide describes locking and row versioning mechanisms the database engine uses... *(Incorrect: "Database Engine" must be capitalized.)*
+- **Technical Design** *(Incorrect: Section titles use sentence capitalization)*
 
 ## Terms capitalization
 
@@ -54,22 +59,31 @@ Correct examples:
 - This guide describes locking and row versioning mechanisms the **Database Engine** uses to ensure the integrity of each transaction and provides information on how applications can control transactions efficiently
 - **AppWorkspaces** are created by the system when an **Application** is deployed to a **Cluster**
 
-References:
+Incorrect examples:
 
-- Grafana dashboards
-  - https://grafana.com/solutions/apache-cassandra/monitor/
-  - https://grafana.com/solutions/nomad/monitor
-- https://docs.docker.com/desktop/install/windows-install/
-- https://learn.microsoft.com/en-us/sql/sql-server/?view=sql-server-ver16
-- https://kubernetes.io/docs/home/
-  - But https://kubernetes.io/docs/tasks/
-- https://www.envoyproxy.io/docs/envoy/latest/start/start
-  - But "Getting Started"
-- https://docs.github.com/en/billing/managing-billing-for-github-copilot/managing-your-github-copilot-subscription
-  - Billing settings
-  - Github Actions
-  - Your Github account
-  - Paid organizations for procurement companies
+- This guide describes locking and row versioning mechanisms the **database engine** uses... *(Incorrect: "Database Engine" must be capitalized.)*
+
+Industry examples of technical term capitalization:
+
+- **Grafana documentation**:
+  - [Apache Cassandra monitoring guide](https://grafana.com/solutions/apache-cassandra/monitor/)
+  - [Nomad monitoring documentation](https://grafana.com/solutions/nomad/monitor)
+
+- **Docker documentation**:
+  - [Windows installation guide](https://docs.docker.com/desktop/install/windows-install/)
+
+- **Microsoft SQL Server documentation**:
+  - [SQL Server technical documentation](https://learn.microsoft.com/en-us/sql/sql-server/?view=sql-server-ver16)
+
+- **Envoy Proxy documentation**:
+  - [Getting started guide](https://www.envoyproxy.io/docs/envoy/latest/start/start)
+
+- **GitHub documentation**:
+  - [GitHub Copilot subscription management](https://docs.github.com/en/billing/managing-billing-for-github-copilot/managing-your-github-copilot-subscription) - Consistently capitalizes product names:
+    - "Billing settings"
+    - "GitHub Actions"
+    - "Your GitHub account"
+    - "Paid organizations for procurement companies"
 
 ## Lists
 
