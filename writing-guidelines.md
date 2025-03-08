@@ -51,19 +51,6 @@ References:
 - **Technical Design** *(Incorrect: Section titles use sentence capitalization)*
 - **The technical design** *(Incorrect: Articles should not be used in titles)*
 
-Industry examples:
-
-- [Grafana: Apache Cassandra monitoring guide](https://grafana.com/solutions/apache-cassandra/monitor/)
-- [Grafana: Nomad monitoring documentation](https://grafana.com/solutions/nomad/monitor)
-- [Docker: Windows installation guide](https://docs.docker.com/desktop/install/windows-install/)
-- [Microsoft SQL Server technical documentation](https://learn.microsoft.com/en-us/sql/sql-server/?view=sql-server-ver16)
-- [Envoy Proxy: Getting started guide](https://www.envoyproxy.io/docs/envoy/latest/start/start)
-- [GitHub Copilot subscription management](https://docs.github.com/en/billing/managing-billing-for-github-copilot/managing-your-github-copilot-subscription) - Consistently capitalizes product names:
-  - "Billing settings"
-  - "GitHub Actions"
-  - "Your GitHub account"
-  - "Paid organizations for procurement companies"
-
 ## Terms capitalization
 
 - Terms explicitly defined in the documentation (**e.g., Database Engine, App, Cluster, AppWorkspace**) SHOULD be capitalized
@@ -183,5 +170,21 @@ Imperative description guidelines:
 
 ## References
 
+Guides:
+
 - [Microsoft Writing Style Guide](https://docs.microsoft.com/en-us/style-guide/welcome/)
 - [Google Developer Documentation Style Guide](https://developers.google.com/style)
+
+Industry examples:
+
+- [Grafana: Apache Cassandra monitoring guide](https://grafana.com/solutions/apache-cassandra/monitor/)
+- [Grafana: Nomad monitoring documentation](https://grafana.com/solutions/nomad/monitor)
+- [Docker: Windows installation guide](https://docs.docker.com/desktop/install/windows-install/)
+- [Microsoft SQL Server technical documentation](https://learn.microsoft.com/en-us/sql/sql-server/?view=sql-server-ver16)
+- [Envoy Proxy: Getting started guide](https://www.envoyproxy.io/docs/envoy/latest/start/start)
+- [GitHub Copilot subscription management](https://docs.github.com/en/billing/managing-billing-for-github-copilot/managing-your-github-copilot-subscription) - Consistently capitalizes product names:
+  - "Billing settings"
+  - "GitHub Actions"
+  - "Your GitHub account"
+  - "Paid organizations for procurement companies"
+  
