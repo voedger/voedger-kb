@@ -109,6 +109,11 @@ Markdown files MUST be validated using the [markdownlint](https://marketplace.vi
     },
 ```
 
+Some markdownlint rules:
+
+- [MD032](https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md032.md): Lists should be surrounded by blank lines
+- [MD012](https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md012.md): Multiple consecutive blank lines
+
 ## Go function documentation style
 
 When documenting Go functions, choose between simple and complex documentation styles based on the function's complexity and importance.
