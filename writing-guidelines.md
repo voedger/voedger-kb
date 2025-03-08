@@ -41,12 +41,12 @@ References:
 - Sentence capitalization style MUST be used **except** for document titles (e.g., "Technical Writing Guidelines"), proper names and explicitly defined terms
 - Articles (a, an, the) SHOULD NOT be used in titles
 
-Correct examples:
+👍Correct examples:
 
 - **Technical Writing Guidelines** *(document title)*
 - **Technical design** *(section title)*
 
-Incorrect examples:
+❌Incorrect examples:
 
 - **Technical Design** *(Incorrect: Section titles use sentence capitalization)*
 - **The technical design** *(Incorrect: Articles should not be used in titles)*
@@ -55,12 +55,12 @@ Incorrect examples:
 
 - Terms explicitly defined in the documentation (**e.g., Database Engine, App, Cluster, AppWorkspace**) SHOULD be capitalized
 
-Correct examples:
+👍Correct examples:
 
 - This guide describes locking and row versioning mechanisms the **Database Engine** uses to ensure the integrity of each transaction
 - **AppWorkspaces** are created by the system when an **Application** is deployed to a **Cluster**
 
-Incorrect examples:
+❌Incorrect examples:
 
 - This guide describes locking and row versioning mechanisms the **database engine** uses... *(Incorrect: "Database Engine" must be capitalized)*
 - **App workspaces** are created by the system... *(Incorrect: "AppWorkspaces" is the correct term)*
@@ -91,13 +91,13 @@ Industry examples of technical term capitalization:
 
 List items MUST NOT end with a period:
 
-Correct:
+👍Correct examples:
 
 - Initialize the repository
 - Configure all environment variables
 - Ensure the server is running before deployment
 
-Incorrect:
+❌Incorrect examples:
 
 - Initialize the repository.
 - Configure all environment variables.
