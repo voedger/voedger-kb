@@ -51,6 +51,19 @@ References:
 - **Technical Design** *(Incorrect: Section titles use sentence capitalization)*
 - **The technical design** *(Incorrect: Articles should not be used in titles)*
 
+Industry examples:
+
+- [Grafana: Apache Cassandra monitoring guide](https://grafana.com/solutions/apache-cassandra/monitor/)
+- [Grafana: Nomad monitoring documentation](https://grafana.com/solutions/nomad/monitor)
+- [Docker: Windows installation guide](https://docs.docker.com/desktop/install/windows-install/)
+- [Microsoft SQL Server technical documentation](https://learn.microsoft.com/en-us/sql/sql-server/?view=sql-server-ver16)
+- [Envoy Proxy: Getting started guide](https://www.envoyproxy.io/docs/envoy/latest/start/start)
+- [GitHub Copilot subscription management](https://docs.github.com/en/billing/managing-billing-for-github-copilot/managing-your-github-copilot-subscription) - Consistently capitalizes product names:
+  - "Billing settings"
+  - "GitHub Actions"
+  - "Your GitHub account"
+  - "Paid organizations for procurement companies"
+
 ## Terms capitalization
 
 - Terms explicitly defined in the documentation (**e.g., Database Engine, App, Cluster, AppWorkspace**) SHOULD be capitalized
@@ -64,28 +77,6 @@ References:
 
 - This guide describes locking and row versioning mechanisms the **database engine** uses... *(Incorrect: "Database Engine" must be capitalized)*
 - **App workspaces** are created by the system... *(Incorrect: "AppWorkspaces" is the correct term)*
-
-Industry examples of technical term capitalization:
-
-- **Grafana documentation**:
-  - [Apache Cassandra monitoring guide](https://grafana.com/solutions/apache-cassandra/monitor/)
-  - [Nomad monitoring documentation](https://grafana.com/solutions/nomad/monitor)
-
-- **Docker documentation**:
-  - [Windows installation guide](https://docs.docker.com/desktop/install/windows-install/)
-
-- **Microsoft SQL Server documentation**:
-  - [SQL Server technical documentation](https://learn.microsoft.com/en-us/sql/sql-server/?view=sql-server-ver16)
-
-- **Envoy Proxy documentation**:
-  - [Getting started guide](https://www.envoyproxy.io/docs/envoy/latest/start/start)
-
-- **GitHub documentation**:
-  - [GitHub Copilot subscription management](https://docs.github.com/en/billing/managing-billing-for-github-copilot/managing-your-github-copilot-subscription) - Consistently capitalizes product names:
-    - "Billing settings"
-    - "GitHub Actions"
-    - "Your GitHub account"
-    - "Paid organizations for procurement companies"
 
 ## Lists
 
@@ -148,7 +139,7 @@ func (s *sequencer) Flush() {
 Declarative description guidelines:
 
 - MUST use third-person present tense verbs (generates, copies, validates, completes, panics)
-- MUST use complete sentences with proper punctuation
+- MUST use complete sentences with proper punctuation, not more than one sentence per line
 - MAY include multiple declarative sentences describing behaviors, preconditions, and effects like "Copies `inproc` buffer to the..."
 - MAY describe behavior conditions using "if" statements or phrases like "Panics if..."
 - MAY include descriptions of return values using a colon format (e.g., "cleanup: function to stop the actualizer")
