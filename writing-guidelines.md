@@ -1,30 +1,36 @@
 # Technical Writing Guidelines
 
-This document outlines the technical writing guidelines for Voedger projects and covers the following areas:
+This document outlines technical writing standards for Voedger projects, covering:
 
 - Source code comments
-- Requirements
-- Design
+- Requirements documentation
+- Technical design documentation
 
-## Capitalization
+## Titles
 
-- Sentence capitalization **must** be used except for the documentation names (like "Technical Writing Guidelines")
-- Terms that are defined in documentation **should** be capitalized
+- Use sentence capitalization **except** for document titles (e.g., "Technical Writing Guidelines") and explicitly defined terms
+- Articles (a, an, the) **should NOT** be used in titles
 
-Correct:
+Correct examples:
 
-- Technical Writing Guidelines
-- This guide describes locking and row versioning mechanisms the Database Engine uses to ensure the integrity of each transaction and provides information on how applications can control transactions efficiently
-- Technical design
-  - If this is a section title
-- AppWorkspaces are created by the system when an App is deployed to a Cluster
+- **Technical Writing Guidelines**
+- **Technical design** *(as a section title)*
 
-Incorrect:
+Incorrect examples:
 
-- Technical Design (if this is a section title)
-- App workspaces are created by system when an app is deployed to a cluster.
+- **Technical Design** *(Incorrect: Section titles use sentence capitalization.)*
+- This guide describes locking and row versioning mechanisms the database engine uses... *(Incorrect: "Database Engine" must be capitalized.)*
 
-### Capitalization related references
+## Terms capitalization
+
+- Terms explicitly defined in documentation (**e.g., Database Engine, App, Cluster, AppWorkspace**) **should** always be capitalized consistently
+
+Correct examples:
+
+- This guide describes locking and row versioning mechanisms the **Database Engine** uses to ensure the integrity of each transaction and provides information on how applications can control transactions efficiently
+- **AppWorkspaces** are created by the system when an **Application** is deployed to a **Cluster**
+
+### References related to capitalization
 
 - Grafana dashboards
   - https://grafana.com/solutions/apache-cassandra/monitor/
