@@ -134,7 +134,7 @@ Declarative description guidelines:
 - MUST use complete sentences with proper punctuation, not more than one sentence per line
 - MAY include multiple declarative sentences describing behaviors, preconditions, and effects like "Copies `inproc` buffer to the..."
 - MAY describe behavior conditions using "if" statements or phrases like "Panics if..."
-- MAY include descriptions of return values using a colon format (e.g., "cleanup: function to stop the actualizer")
+- MAY include descriptions of input parameters and return values using a colon format (e.g., "cleanup: function to stop the actualizer")
 
 ### Complex functions
 
@@ -187,4 +187,3 @@ Industry examples:
   - "GitHub Actions"
   - "Your GitHub account"
   - "Paid organizations for procurement companies"
-  
