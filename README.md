@@ -8,17 +8,17 @@ Voedger is an all-in-one server platform for developing and operating specialize
 
 The name "Voedger" combines "Voyager" and "Edge Computing," reflecting its capability to process data across network edges.
 
-## Repository Structure
+## Repository structure
 
 This knowledge base is organized into several key sections:
 
-### Structured Documentation
+### Documentation
 
 - [Software Engineering Principles and Best Practices for Voedger Development](se.md)
-- [Go-based Development Guidelines](go-guidelines.md)
-- [Go-based Development Tips](go-tips.md)
+- [Go Development Guidelines](go-guidelines.md)
+- [Go Development Tips and Tricks](go-tips.md)
 - [Technical Writing Guidelines](writing-guidelines.md)
 
-### Issues
+### In-issues documentation
 
 The repository also contains individual [issues](https://github.com/voedger/voedger-kb/issues), each focused on a specific topic.
