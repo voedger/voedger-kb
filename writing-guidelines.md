@@ -43,12 +43,13 @@ References:
 
 Correct examples:
 
-- **Technical Writing Guidelines**
-- **Technical design** *(as a section title)*
+- **Technical Writing Guidelines** *(document title)*
+- **Technical design** *(section title)*
 
 Incorrect examples:
 
 - **Technical Design** *(Incorrect: Section titles use sentence capitalization)*
+- **The technical design** *(Incorrect: Articles should not be used in titles)*
 
 ## Terms capitalization
 
@@ -56,12 +57,13 @@ Incorrect examples:
 
 Correct examples:
 
-- This guide describes locking and row versioning mechanisms the **Database Engine** uses to ensure the integrity of each transaction and provides information on how applications can control transactions efficiently
+- This guide describes locking and row versioning mechanisms the **Database Engine** uses to ensure the integrity of each transaction
 - **AppWorkspaces** are created by the system when an **Application** is deployed to a **Cluster**
 
 Incorrect examples:
 
-- This guide describes locking and row versioning mechanisms the **database engine** uses... *(Incorrect: "Database Engine" must be capitalized.)*
+- This guide describes locking and row versioning mechanisms the **database engine** uses... *(Incorrect: "Database Engine" must be capitalized)*
+- **App workspaces** are created by the system... *(Incorrect: "AppWorkspaces" is the correct term)*
 
 Industry examples of technical term capitalization:
 
@@ -103,32 +105,32 @@ Incorrect:
 
 ## Markdown files
 
-Markdown files MUST be validated using the [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) tool with the followinq exceptions:
+Markdown files MUST be validated using the [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) tool to ensure consistent formatting across all documentation. The following exceptions to the default rules are allowed:
 
 ```json
     "markdownlint.config": {
-        "MD004":false,
-        "MD010": false,
-        "MD029": false,
-        "MD031": false,
-        "MD033": false,
-        "MD034": false,
+        "MD004": false,  // Allow alternative unordered list style
+        "MD010": false,  // Allow hard tabs in code blocks
+        "MD029": false,  // Allow ordered lists with non-1 start values
+        "MD031": false,  // Allow fenced code blocks without surrounding blank lines
+        "MD033": false,  // Allow inline HTML for complex formatting needs
+        "MD034": false,  // Allow bare URLs when necessary
     },
 ```
 
 ## Go function documentation style
 
-When documenting Go functions, use the following guidelines:
+When documenting Go functions, choose between simple and complex documentation styles based on the function's complexity and importance.
 
 ### Simple functions
 
-Simple functions require only a declarative description:
+Use simple documentation for straightforward functions with clear, limited responsibilities. Simple functions require only a declarative description:
 
 ```go
 // New creates a new instance of the Sequencer type.
 // Instance has actualizer() goroutine started.
 // cleanup: function to stop the actualizer.
-func New(*isequencer.Params) isequencer.ISequencer, cleanup(), error {
+func New(*isequencer.Params) (isequencer.ISequencer, cleanup func(), error) {
     // ...
 }
 ```
@@ -138,9 +140,9 @@ func New(*isequencer.Params) isequencer.ISequencer, cleanup(), error {
 // Panics if Event Processing is not in progress.
 // Copies `inproc` buffer to the `toBeFlushed` buffer and clears `inproc`.
 // Sends the current batch to the flushing queue and completes the event processing.
- func (s *sequencer)Flush() {
+func (s *sequencer) Flush() {
     // ...
- }
+}
 ```
 
 Declarative description guidelines:
@@ -152,6 +154,13 @@ Declarative description guidelines:
 - MAY include descriptions of return values using a colon format (e.g., "cleanup: function to stop the actualizer")
 
 ### Complex functions
+
+Use complex documentation for functions that:
+
+- Implement critical business logic
+- Have multiple steps or conditions
+- Require understanding of system architecture
+- Are called from multiple locations
 
 Complex functions MUST include both declarative and imperative descriptions:
 
@@ -174,7 +183,9 @@ Imperative description guidelines:
 - MUST use imperative verbs (validate, get, try)
 - MUST start with "Flow:" and use bullet points
 - Imperative bullet points MUST NOT have periods at the end
+- MUST describe the sequence of operations in order of execution
 
 ## References
 
 - [Microsoft Writing Style Guide](https://docs.microsoft.com/en-us/style-guide/welcome/)
+- [Google Developer Documentation Style Guide](https://developers.google.com/style)
