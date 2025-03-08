@@ -127,15 +127,29 @@ Simple functions require only a declarative description:
 ```go
 // New creates a new instance of the Sequencer type.
 // Instance has actualizer() goroutine started.
+// cleanup: function to stop the actualizer.
 func New(*isequencer.Params) isequencer.ISequencer, cleanup(), error {
     // ...
 }
 ```
+
+```go
+// Flush completes Event Processing.
+// Panics if Event Processing is not in progress.
+// Copies `inproc` buffer to the `toBeFlushed` buffer and clears `inproc`.
+// Sends the current batch to the flushing queue and completes the event processing.
+ func (s *sequencer)Flush() {
+    // ...
+ }
+```
+
 Declarative description guidelines:
 
-- MUST use third-person verbs (generates, copies, validates)
+- MUST use third-person present tense verbs (generates, copies, validates, completes, panics)
 - MUST use complete sentences with proper punctuation
-- MUST use simple declarative sentences, not more than one per line
+- MAY include multiple declarative sentences describing behaviors, preconditions, and effects like "Copies `inproc` buffer to the..."
+- MAY describe behavior conditions using "if" statements or phrases like "Panics if..."
+- MAY include descriptions of return values using a colon format (e.g., "cleanup: function to stop the actualizer")
 
 ### Complex functions
 
