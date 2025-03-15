@@ -168,11 +168,12 @@ Imperative description guidelines:
 - Imperative bullet points MUST NOT have periods at the end
 - MUST describe the sequence of operations in order of execution
 
-## requirements.md files
+## `requirements.md` files
 
-`requirements.md` is used to describe the requirements for a project or particular package.
+A `requirements.md` file documents specifications for a project or package. These files are particularly important as they can be referenced in prompts to generative AI tools, serving as structured guidance for AI generation tasks.
 
-If the requirements are copied from another source, the source MUST be referenced at the beginning of the document:
+For content copied from other sources, you must include attribution at the beginning of the document, following this format:
+
 ```markdown
 # Requirements
 
