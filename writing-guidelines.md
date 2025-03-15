@@ -172,12 +172,12 @@ Imperative description guidelines:
 
 A `requirements.md` file documents the requirements for a project or package. These files are especially valuable as they can be referenced in prompts for generative AI tools, providing structured guidance for generating sources, README.md files, schemas, and other artifacts.
 
-For content copied from other sources, you must include attribution at the beginning of the document, following this format:
+For content derived from other sources, attribution at the beginning of the document MUST be included, following this format:
 
 ```markdown
 # Requirements
 
-Parts of this document are copied from the following sources:
+This document contains content derived from the following sources:
 
 - https://github.com/voedger/voedger-internals/<path-to-file1>
 - https://github.com/voedger/voedger-internals/<path-to-file2>
