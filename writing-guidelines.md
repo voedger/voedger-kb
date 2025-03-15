@@ -168,6 +168,20 @@ Imperative description guidelines:
 - Imperative bullet points MUST NOT have periods at the end
 - MUST describe the sequence of operations in order of execution
 
+## requirements.md files
+
+`requirements.md` is used to describe the requirements for a project or particular package.
+
+If the requirements are copied from another source, the source MUST be referenced at the beginning of the document:
+```markdown
+# Requirements
+
+Parts of this document are copied from the following sources:
+
+- https://github.com/voedger/voedger-internals/<path-to-file1>
+- https://github.com/voedger/voedger-internals/<path-to-file2>
+```
+
 ## References
 
 Guides:
