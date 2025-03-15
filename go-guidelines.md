@@ -2,6 +2,8 @@
 
 This document outlines the development guidelines for Go-based projects at Voedger.
 
+---
+
 ## Foundations and key references
 
 - [Effective Go](https://go.dev/doc/effective_go)
@@ -15,10 +17,14 @@ This document outlines the development guidelines for Go-based projects at Voedg
 - [Subtests in Go](https://go.dev/blog/subtests)
 - [Go Type System Overview](https://go101.org/article/type-system-overview.html)
 
+---
+
 ## Package structure
 
 - [Package Structure Guide](https://github.com/voedger/kb/issues/45)
-- [requirements.md](writing-guidelines.md#requirementsmd-files)
+- `requirements.md` MUST comply with the [requirements.md](writing-guidelines.md#requirementsmd-files) guidelines 
+
+---
 
 ## Testing
 
@@ -38,6 +44,8 @@ Testable examples MAY be provided to demonstrate code usage:
 - [Example: binary package tests](https://cs.opensource.google/go/go/+/refs/tags/go1.20.5:src/encoding/binary/example_test.go)
 - [Example: `binary.Write`](https://pkg.go.dev/encoding/binary#example-Write)
 - [Example: `in10nmem` tests](https://github.com/voedger/voedger/blob/15ef848eecdc1950a6eba71732991012d509be18/pkg/in10nmem/example_test.go#L21)
+
+---
 
 ## Construction
 
@@ -78,6 +86,8 @@ For dependency injection testing:
 **In packages that inject dependencies:**
 
 - Use `IElectionsTestSuite` to test the implementation with specific injections.
+
+---
 
 ## Scripts
 
