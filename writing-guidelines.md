@@ -170,7 +170,7 @@ Imperative description guidelines:
 
 ## `requirements.md` files
 
-A `requirements.md` file documents specifications for a project or package. These files are particularly important as they can be referenced in prompts to generative AI tools, serving as structured guidance for AI generation tasks.
+A `requirements.md` file documents the requirements for a project or package. These files are especially valuable as they can be referenced in prompts for generative AI tools, providing structured guidance for generating sources, README.md files, schemas, and other artifacts.
 
 For content copied from other sources, you must include attribution at the beginning of the document, following this format:
 
