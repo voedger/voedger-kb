@@ -87,6 +87,29 @@ It is necessary to design an architecture for the following [requirements](https
 - [Attempt1](https://chatgpt.com/share/67a79fa1-89ac-800b-aab9-fe00191e2317)
 - [Attempt2](https://chatgpt.com/share/67a53e8c-3a08-800b-9d16-5cdef1fe7c5c)
 
+## DRY
+
+The **DRY principle** applies to both source code and documentation by eliminating redundancy and ensuring a single source of truth (SSOT).  
+
+❌Incorrect example:
+
+```markdown
+Authentication:
+To access the API, send a token in the Authorization header.
+(Same text appears in multiple sections.)
+```
+
+👍Correct example, DRY applied:
+
+```markdown
+See the [Authentication Guide](#authentication) for details.
+```
+
+Guidelines for DRY:
+
+- **In code**: Use functions, modules, or inheritance to remove redundancy
+- **In documentation**: Use links, templates, and auto-generated docs to avoid duplication
+
 ## Software Engineering & AI
 
 **Software Engineering and Software Development Process**:
