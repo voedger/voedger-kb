@@ -19,7 +19,6 @@ This document outlines the development guidelines for Go-based projects at Voedg
 
 - [Package Structure Guide](https://github.com/voedger/kb/issues/45)
 - [requirements.md](writing-guidelines.md#requirementsmd-files)
-- [requirements.md](writing-guidelines.md#requirementsmd-files)
 
 ## Concurrency Review Requirements
 
