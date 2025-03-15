@@ -89,7 +89,7 @@ It is necessary to design an architecture for the following [requirements](https
 
 ## DRY
 
-The **"Don't Repeat Yourself" (DRY) principle** applies to both source code and documentation by eliminating redundancy and ensuring a single source of truth (SSOT).  
+The **"Don't Repeat Yourself" (DRY) principle** applies to both source code and documentation by eliminating redundancy and ensuring a single source of truth (SSOT). It states that every unit of knowledge should have a single, unambiguous representation within a system. Repetition increases the risk of inconsistencies and makes maintenance more complex, while DRY promotes clarity and efficiency.
 
 ❌Incorrect example:
 
