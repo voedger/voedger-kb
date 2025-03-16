@@ -168,14 +168,23 @@ Imperative description guidelines:
 - Imperative bullet points MUST NOT have periods at the end
 - MUST describe the sequence of operations in order of execution
 
-## `requirements.md` files
+## <a name="reqdesign"></a> Requirements and design files
 
-A `requirements.md` file documents the requirements for a project or package. These files are especially valuable as they can be referenced in prompts for generative AI tools, providing structured guidance for generating sources, README.md files, schemas, and other artifacts.
+- `requirements.md` file documents the requirements for a project or package
+  - This file MAY also contain the design
+- `design.md` file documents the design that fulfills the requirements
+
+Examples:
+
+- [reqmd/requirements.md](https://github.com/voedger/reqmd/blob/main/requirements.md)
+- [reqmd/design.md](https://github.com/voedger/reqmd/blob/main/design.md)
+
+These files are especially valuable as they can be referenced in prompts for generative AI tools, providing structured guidance for generating sources, README.md files, schemas, and other artifacts.
 
 For content derived from other sources, attribution at the beginning of the document MUST be included, following this format:
 
 ```markdown
-# Requirements
+# Requirements (Design)
 
 This document contains content derived from the following sources:
 
