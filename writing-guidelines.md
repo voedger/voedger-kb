@@ -1,14 +1,14 @@
 # Technical Writing Guidelines
 
-This document outlines technical writing standards for Voedger projects, covering:
+## Introduction
+
+This document outlines technical writing guidelines for Voedger projects, covering:
 
 - Requirements documentation
 - Technical design documentation
 - Source code comments
 
-## About this document
-
-This technical writing guide itself uses the RFC 2119 terminology (MUST, SHOULD, MAY) to indicate the importance level of each guideline:
+The RFC 2119 terminology (MUST, SHOULD, MAY) is used to indicate the importance level of each guideline:
 
 - MUST: Indicates an absolute requirement. Compliance is mandatory
 - SHOULD: Indicates a recommendation that may be ignored in particular circumstances after the implications are understood and carefully considered
@@ -30,11 +30,62 @@ References:
 
 - [RFC 2119](https://datatracker.ietf.org/doc/html/rfc2119)
 
+---
+
 ## Definitions
 
 - **Sentence Capitalization Style**: A style that uses capital letters only for the first word of a sentence, proper nouns, and acronyms, while all other words remain lowercase
 - **Declarative Description**: Explains what a function does or achieves, using third-person verbs and complete sentences
 - **Imperative Description**: Describes how a function works step-by-step, using imperative verbs and bullet points
+
+---
+
+## General document structure
+
+### `# Title`
+
+- Importance: MUST
+- Optional content: Version, author(s), date, status (draft/reviewed/final)  
+
+### `## Introduction`
+
+- Importance: MUST
+- Content: Brief description of the purpose and scope  
+
+### `## Motivation`
+
+- Importance: SHOULD
+  - If the document addresses issues: MUST
+
+### `## Definitions`
+
+- Importance: MAY
+
+Content example:
+
+- **Term1**: Definition1
+- **Term2**: Definition2
+
+### `## Concerns`
+
+- Importance: MAY
+- Content: Unresolved issues, concerns, or pending decisions  
+
+### `## Addressed issues`
+
+- Importance: SHOULD
+- Content: Reference to resolved issues
+
+### `## References`
+
+- Importance: MAY
+- Content: Links to relevant docs, external resources  
+
+### Examples
+
+- [server/design/sequences.md](https://github.com/voedger/voedger-internals/blob/6877c9fca3e0487e2c100d8e1ae0e7ad89f0b653/server/design/sequences.md)
+
+---
 
 ## Titles
 
@@ -65,6 +116,8 @@ References:
 - This guide describes locking and row versioning mechanisms the **database engine** uses... *(Incorrect: "Database Engine" must be capitalized)*
 - **App workspaces** are created by the system... *(Incorrect: "AppWorkspaces" is the correct term)*
 
+---
+
 ## Lists
 
 List items MUST NOT end with a period:
@@ -80,6 +133,8 @@ List items MUST NOT end with a period:
 - Initialize the repository.
 - Configure all environment variables.
 - Ensure the server is running before deployment.
+
+---
 
 ## Markdown files
 
@@ -100,6 +155,8 @@ Some markdownlint rules:
 
 - [MD032](https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md032.md): Lists should be surrounded by blank lines
 - [MD012](https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md012.md): Multiple consecutive blank lines
+
+---
 
 ## Go function documentation style
 
@@ -168,6 +225,8 @@ Imperative description guidelines:
 - Imperative bullet points MUST NOT have periods at the end
 - MUST describe the sequence of operations in order of execution
 
+---
+
 ## Requirements and design files
 
 - `requirements.md` file documents the requirements for a project or package
@@ -191,6 +250,8 @@ This document contains content derived from the following sources:
 - https://github.com/voedger/voedger-internals/<path-to-file1>
 - https://github.com/voedger/voedger-internals/<path-to-file2>
 ```
+
+---
 
 ## References
 
