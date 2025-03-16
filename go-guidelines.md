@@ -22,7 +22,7 @@ This document outlines the development guidelines for Go-based projects at Voedg
 ## Package structure
 
 - [Package Structure Guide](https://github.com/voedger/kb/issues/45)
-- `requirements.md` MUST comply with the [requirements.md](writing-guidelines.md#requirementsmd-files) guidelines
+- `requirements.md` MUST comply with the [requirements.md](writing-guidelines.md#requirements-and-design-files) guidelines
 
 ---
 

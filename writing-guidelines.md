@@ -168,7 +168,7 @@ Imperative description guidelines:
 - Imperative bullet points MUST NOT have periods at the end
 - MUST describe the sequence of operations in order of execution
 
-## <a name="reqdesign"></a> Requirements and design files
+## Requirements and design files
 
 - `requirements.md` file documents the requirements for a project or package
   - This file MAY also contain the design
