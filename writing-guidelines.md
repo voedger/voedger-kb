@@ -47,10 +47,18 @@ References:
 - Importance: MUST
 - Optional content: Version, author(s), date, status (draft/reviewed/final)  
 
+### `## Abstract`
+
+- Importance: MAY
+- Content: Brief summary of the document's purpose and key points
+
 ### `## Introduction`
 
 - Importance: MUST
-- Content: Brief description of the purpose and scope  
+- Content
+  - Brief description of the purpose and scope
+  - Detailed context and prior work relevant to the topic (background)
+  - Overview of the document structure and key sections
 
 ### `## Motivation`
 
