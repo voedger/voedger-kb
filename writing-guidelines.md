@@ -52,6 +52,10 @@ References:
 - Importance: MAY
 - Content: Brief summary of the document's purpose and key points
 
+### `## Motivation`
+
+- Importance: MUST if the document addresses issues, SHOULD otherwise
+
 ### `## Introduction`
 
 - Importance: MUST
@@ -59,11 +63,6 @@ References:
   - Brief description of the purpose and scope
   - Detailed context and prior work relevant to the topic (background)
   - Optional: Overview of the document structure and key sections
-
-### `## Motivation`
-
-- Importance: SHOULD
-  - If the document addresses issues: MUST
 
 ### `## Definitions`
 
@@ -83,7 +82,7 @@ Content example:
 
 ### `## Addressed issues`
 
-- Importance: MAY
+- Importance: MUST if the document addresses issues
 - Content: References to addressed issues
 
 ### `## References`
