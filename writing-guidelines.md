@@ -58,7 +58,7 @@ References:
 - Content
   - Brief description of the purpose and scope
   - Detailed context and prior work relevant to the topic (background)
-  - Overview of the document structure and key sections
+  - Optional: Overview of the document structure and key sections
 
 ### `## Motivation`
 
@@ -71,8 +71,10 @@ References:
 
 Content example:
 
+```markdown
 - **Term1**: Definition1
 - **Term2**: Definition2
+```
 
 ### `## Concerns`
 
@@ -81,15 +83,15 @@ Content example:
 
 ### `## Addressed issues`
 
-- Importance: SHOULD
-- Content: Reference to resolved issues
+- Importance: MAY
+- Content: References to addressed issues
 
 ### `## References`
 
 - Importance: MAY
 - Content: Links to relevant docs, external resources  
 
-### Examples
+### Document examples
 
 - [server/design/sequences.md](https://github.com/voedger/voedger-internals/blob/6877c9fca3e0487e2c100d8e1ae0e7ad89f0b653/server/design/sequences.md)
 
