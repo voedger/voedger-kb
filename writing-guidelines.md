@@ -1,14 +1,14 @@
 # Technical Writing Guidelines
 
-This document outlines technical writing standards for Voedger projects, covering:
+## Introduction
+
+This document outlines technical writing guidelines for Voedger projects, covering:
 
 - Requirements documentation
 - Technical design documentation
 - Source code comments
 
-## About this document
-
-This technical writing guide itself uses the RFC 2119 terminology (MUST, SHOULD, MAY) to indicate the importance level of each guideline:
+The RFC 2119 terminology (MUST, SHOULD, MAY) is used to indicate the importance level of each guideline:
 
 - MUST: Indicates an absolute requirement. Compliance is mandatory
 - SHOULD: Indicates a recommendation that may be ignored in particular circumstances after the implications are understood and carefully considered
@@ -30,11 +30,71 @@ References:
 
 - [RFC 2119](https://datatracker.ietf.org/doc/html/rfc2119)
 
+---
+
 ## Definitions
 
 - **Sentence Capitalization Style**: A style that uses capital letters only for the first word of a sentence, proper nouns, and acronyms, while all other words remain lowercase
 - **Declarative Description**: Explains what a function does or achieves, using third-person verbs and complete sentences
 - **Imperative Description**: Describes how a function works step-by-step, using imperative verbs and bullet points
+
+---
+
+## General document structure
+
+### `# Title`
+
+- Importance: MUST
+- Optional content: Version, author(s), date, status (draft/reviewed/final)  
+
+### `## Abstract`
+
+- Importance: MAY
+- Content: Brief summary of the document's purpose and key points
+
+### `## Motivation`
+
+- Importance: MUST if the document addresses issues, SHOULD otherwise
+
+### `## Introduction`
+
+- Importance: MUST
+- Content
+  - Brief description of the purpose and scope
+  - Detailed context and prior work relevant to the topic (background)
+  - Optional: Overview of the document structure and key sections
+
+### `## Definitions`
+
+- Importance: MAY
+
+Content example:
+
+```markdown
+- **Term1**: Definition1
+- **Term2**: Definition2
+```
+
+### `## Concerns`
+
+- Importance: MAY
+- Content: Unresolved issues, concerns, or pending decisions  
+
+### `## Addressed issues`
+
+- Importance: MUST if the document addresses issues
+- Content: References to addressed issues
+
+### `## References`
+
+- Importance: MAY
+- Content: Links to relevant docs, external resources  
+
+### Document examples
+
+- [server/design/sequences.md](https://github.com/voedger/voedger-internals/blob/6877c9fca3e0487e2c100d8e1ae0e7ad89f0b653/server/design/sequences.md)
+
+---
 
 ## Titles
 
@@ -65,6 +125,8 @@ References:
 - This guide describes locking and row versioning mechanisms the **database engine** uses... *(Incorrect: "Database Engine" must be capitalized)*
 - **App workspaces** are created by the system... *(Incorrect: "AppWorkspaces" is the correct term)*
 
+---
+
 ## Lists
 
 List items MUST NOT end with a period:
@@ -80,6 +142,8 @@ List items MUST NOT end with a period:
 - Initialize the repository.
 - Configure all environment variables.
 - Ensure the server is running before deployment.
+
+---
 
 ## Markdown files
 
@@ -173,20 +237,33 @@ Imperative description guidelines:
 - Imperative bullet points MUST NOT have periods at the end
 - MUST describe the sequence of operations in order of execution
 
-## `requirements.md` files
+---
 
-A `requirements.md` file documents the requirements for a project or package. These files are especially valuable as they can be referenced in prompts for generative AI tools, providing structured guidance for generating sources, README.md files, schemas, and other artifacts.
+## Requirements and design files
+
+- `requirements.md` file documents the requirements for a project or package
+  - This file MAY also contain the design
+- `design.md` file documents the design that fulfills the requirements
+
+Examples:
+
+- [reqmd/requirements.md](https://github.com/voedger/reqmd/blob/main/requirements.md)
+- [reqmd/design.md](https://github.com/voedger/reqmd/blob/main/design.md)
+
+These files are especially valuable as they can be referenced in prompts for generative AI tools, providing structured guidance for generating sources, README.md files, schemas, and other artifacts.
 
 For content derived from other sources, attribution at the beginning of the document MUST be included, following this format:
 
 ```markdown
-# Requirements
+# Requirements (Design)
 
 This document contains content derived from the following sources:
 
 - https://github.com/voedger/voedger-internals/<path-to-file1>
 - https://github.com/voedger/voedger-internals/<path-to-file2>
 ```
+
+---
 
 ## References
 
