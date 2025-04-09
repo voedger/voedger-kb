@@ -89,6 +89,7 @@ Markdown files MUST be validated using the [markdownlint](https://marketplace.vi
     "markdownlint.config": {
         "MD004": false,  // Allow alternative unordered list style
         "MD010": false,  // Allow hard tabs in code blocks
+        "MD013": false,  // Allow line length over 80 characters
         "MD029": false,  // Allow ordered lists with non-1 start values
         "MD031": false,  // Allow fenced code blocks without surrounding blank lines
         "MD033": false,  // Allow inline HTML for complex formatting needs
@@ -100,6 +101,10 @@ Some markdownlint rules:
 
 - [MD032](https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md032.md): Lists should be surrounded by blank lines
 - [MD012](https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md012.md): Multiple consecutive blank lines
+
+Whenever possible, exclude only the problematic lines.
+
+To ignore specific rules use the [markdownlint-disable](https://github.com/DavidAnson/markdownlint/blob/a4c553a45acdfc4135ff12180fef2798470b1be5/test/MD011-MD021.md?plain=1#L3) tag.
 
 ## Go function documentation style
 
