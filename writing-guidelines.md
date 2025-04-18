@@ -271,6 +271,7 @@ Guides:
 
 - [Microsoft Writing Style Guide](https://docs.microsoft.com/en-us/style-guide/welcome/)
 - [Google Developer Documentation Style Guide](https://developers.google.com/style)
+  - [Key terms](https://developers.google.com/style/key-terms)
 
 Industry examples:
 
