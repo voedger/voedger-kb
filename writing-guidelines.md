@@ -265,7 +265,7 @@ This document contains content derived from the following sources:
 
 ---
 
-## References
+## Resources
 
 Guides:
 
