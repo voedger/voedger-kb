@@ -14,7 +14,8 @@ to software (ISO/IEC/IEEE, “ISO/IEC/IEEE 24765:2017 Systems and Software Engin
 - [DRY](se-dry.md)
 - [Dynamic anti-patterns](se-antipatterns-dyn.md)
 - [Pull Requests and Code Reviews](se-pr.md)
-- [Using AI](se-ai.md)
+- [Prompt Engineering, Lee Boonstra, Google](se-pe.md)
+- [Software Engineering & AI](se-ai.md)
 
 ## Checklist
 
