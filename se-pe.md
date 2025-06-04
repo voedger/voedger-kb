@@ -8,7 +8,7 @@ This whitepaper focuses on writing and optimizing prompts for the Gemini model w
 Links:
 
 - [Document: Prompt Engineering](https://www.gptaiflow.tech/assets/files/2025-01-18-pdf-1-TechAI-Goolge-whitepaper_Prompt%20Engineering_v4-af36dcc7a49bb7269a58b1c9b89a8ae1.pdf)
-- [youtube: Prompt Engineering Guide - From Beginner to Advanced, Matthew Berman]https://www.youtube.com/watch?v=uDIW34h8cmM)
+- [youtube: Prompt Engineering Guide - From Beginner to Advanced, Matthew Berman](https://www.youtube.com/watch?v=uDIW34h8cmM)
 
 ---
 
