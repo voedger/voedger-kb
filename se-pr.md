@@ -3,7 +3,6 @@
 ## Resources
 
 - Google: [Google Engineering Practices Documentation](https://google.github.io/eng-practices/)  
-  - [The Standard of Code Review](https://google.github.io/eng-practices/review/reviewer/standard.html)  
 - ChatGPT: [PR Policy Guidelines](https://chatgpt.com/share/68400db1-fb78-800b-91df-c24981f3150c)  
 - ChatGPT: [Top 10 Code Review Principles](https://chatgpt.com/share/6840125c-6fc8-800b-a385-ec726ed972cd)  
 
