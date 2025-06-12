@@ -21,7 +21,7 @@ to software (ISO/IEC/IEEE, “ISO/IEC/IEEE 24765:2017 Systems and Software Engin
 
 ---
 
-### Pull Requests and Code Reviews
+### Pull requests and code reviews
 
 #### LOC200 Rule
 
@@ -32,7 +32,7 @@ to software (ISO/IEC/IEEE, “ISO/IEC/IEEE 24765:2017 Systems and Software Engin
 - **Hard Limit**: > 800 LOC – must be split unless it's a generated file
 - Numerology: HTTP 200 status code, also known as "OK," indicates that the request was successful
 
-#### PR Size Management
+#### PR size management
 
 - If a developer believes it’s not feasible to follow the LOC200 guideline, they should prepare an Implementation plan
 - Each step in the plan should ideally fit within the 200 LOC limit
