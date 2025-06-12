@@ -6,6 +6,8 @@
 - ChatGPT: [PR Policy Guidelines](https://chatgpt.com/share/68400db1-fb78-800b-91df-c24981f3150c)  
 - ChatGPT: [Top 10 Code Review Principles](https://chatgpt.com/share/6840125c-6fc8-800b-a385-ec726ed972cd)  
 
+---
+
 ## Small PRs
 
 ### Pros of Small PRs
@@ -31,9 +33,7 @@
   - Means poor architecting
 - Feels slower at first – small PRs require more planning and splitting, which can seem like extra work
 
----
-
-## Example of hypothetical splitting large PR
+### Example of hypothetical splitting large PR
 
 - Pull request: [#3749 APIv2 notification: implement subscribe and watch #3757](https://github.com/voedger/voedger/pull/3757)
   - LOC = +446 + |-143| = 589
