@@ -17,7 +17,7 @@ to software (ISO/IEC/IEEE, “ISO/IEC/IEEE 24765:2017 Systems and Software Engin
 - [Prompt Engineering, Lee Boonstra, Google](se-pe.md)
 - [Software Engineering & AI](se-ai.md)
 
-## Checklist
+## Checklists
 
 ---
 
