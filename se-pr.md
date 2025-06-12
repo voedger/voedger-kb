@@ -29,6 +29,7 @@
 - Partial feature exposure – merging in-progress PRs may expose unstable states
   - Feature flags
   - Activate the feature by the last PR
+    - Include system/integration/e2e tests in the last PR to ensure the feature works end-to-end
 - Potential design local-optima – slicing too narrowly may prevent broader refactor insights
   - Means poor architecting
 - Feels slower at first – small PRs require more planning and splitting, which can seem like extra work
