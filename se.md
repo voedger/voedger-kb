@@ -7,7 +7,7 @@ to software (ISO/IEC/IEEE, “ISO/IEC/IEEE 24765:2017 Systems and Software Engin
 - **Systematic approach**: An approach that follows the system of predefined principles and procedures
 - **Why**: To achieve consistent (stable) results
 
-## Table of contents
+## Articles
 
 - [SWEBOK](se-swebok.md)
 - [SOLID](se-solid.md)
@@ -19,13 +19,28 @@ to software (ISO/IEC/IEEE, “ISO/IEC/IEEE 24765:2017 Systems and Software Engin
 
 ## Checklist
 
-### [Pull Requests and Code Reviews](se-pr.md)
+### Pull Requests and Code Reviews
+
+#### LOC200 Rule
 
 - PRs should be small, focused, and self-contained
-  - **Ideal Size**: ≤ 200 LOC (lines changed: added + removed)
-  - **Target Size**: ≤ 400 LOC
-  - **Soft Limit**: ≤ 800 LOC – requires justification in description
-  - **Hard Limit**: > 800 LOC – must be split unless it's a generated file
+- **Ideal Size**: ≤ 200 LOC (lines changed: added + removed)
+- **Target Size**: ≤ 400 LOC
+- **Soft Limit**: ≤ 800 LOC – requires justification in description
+- **Hard Limit**: > 800 LOC – must be split unless it's a generated file
+
+#### PR Size Management
+
+- If a developer believes it’s not feasible to follow the LOC200 guideline, they should prepare an Implementation plan
+- Each step in the plan should ideally fit within the 200 LOC limit
+- Steps should be materialized into issues and implemented sequentially — avoid creating all issues upfront
+- If any step unexpectedly requires additional development, a separate issue and PR should be created for it
+
+[Example](https://github.com/voedger/voedger/issues/3704): while implementing the `subscribe and watch #3749` logic, the developer realizes that they need to add functionality to the `pkg/coreutils/json.go` file. In this case, they should raise a new issue and submit a dedicated PR.
+
+Related articles:
+
+- [Pull Requests and Code Reviews](se-pr.md)
 
 ## History
 
