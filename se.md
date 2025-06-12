@@ -41,6 +41,19 @@ to software (ISO/IEC/IEEE, “ISO/IEC/IEEE 24765:2017 Systems and Software Engin
 
 [Example](https://github.com/voedger/voedger/issues/3704): while implementing the `subscribe and watch #3749` logic, the developer realizes that they need to add functionality to the `pkg/coreutils/json.go` file. In this case, they should raise a new issue and submit a dedicated PR.
 
+#### PR & issues
+
+- An issue SHOULD be created for every PR
+- Naming pattern MUST keep every child issue clearly tied to the parent L2-issue
+
+[Example](https://chatgpt.com/share/684a9006-4f48-800b-888b-fb11eb9667f0):
+
+- L2-issue is named `APIv2: implement /notifications/ paths`
+- Three L1-issues could be created with the names:
+  - `APIv2 /notifications: add JSON & WSID helper utilities`
+  - `APIv2 /notifications: wire router & DI for new endpoints`  
+  - `APIv2 /notifications: implement subscribe/watch handler & tests`
+  
 #### Related articles
 
 - [Pull Requests and Code Reviews](se-pr.md)
