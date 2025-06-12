@@ -26,11 +26,11 @@ to software (ISO/IEC/IEEE, “ISO/IEC/IEEE 24765:2017 Systems and Software Engin
 #### LOC200 Rule
 
 - PRs should be small, focused, and self-contained
-- **Ideal Size**: ≤ 200 LOC (lines changed: added + removed)
-- **Target Size**: ≤ 400 LOC
-- **Soft Limit**: ≤ 800 LOC – requires justification in description
-- **Hard Limit**: > 800 LOC – must be split unless it's a generated file
-- Numerology: HTTP 200 status code, also known as "OK," indicates that the request was successful
+- ⚡**Ideal size**: ≤ 200 LOC (lines changed: added + removed)
+- **Target size**: ≤ 400 LOC
+- **Soft limit**: ≤ 800 LOC – requires justification in description
+- **Hard limit**: > 800 LOC – must be split unless it's a generated file
+- 😂Numerology: HTTP 200 status code, also known as "OK," indicates that the request was successful
 
 #### PR size management
 
