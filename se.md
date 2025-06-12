@@ -44,7 +44,7 @@ to software (ISO/IEC/IEEE, “ISO/IEC/IEEE 24765:2017 Systems and Software Engin
 #### PR & issues
 
 - An issue MUST be created for every PR
-- Naming pattern MUST keep every child issue clearly tied to the parent L2-issue
+- Issue naming pattern MUST keep every child L1-issue clearly tied to the parent L2-issue
 
 [Example](https://chatgpt.com/share/684a9006-4f48-800b-888b-fb11eb9667f0):
 
