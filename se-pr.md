@@ -23,7 +23,6 @@
 ### Cons of Small PRs
 
 - Review overhead – more PRs means more CI runs and approvals
-- Context fragmentation – features split across PRs may lose architectural cohesion
 - Inter-PR dependencies – chained PRs can block each other and slow down progress
   - Addressed by `qs dev --pr` (create a dev branch from the PR branch) and merging PRs, rather than squashing
 - Partial feature exposure – merging in-progress PRs may expose unstable states
