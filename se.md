@@ -62,7 +62,7 @@ to software (ISO/IEC/IEEE, “ISO/IEC/IEEE 24765:2017 Systems and Software Engin
 
 [Example](https://github.com/voedger/voedger/issues/3704): while implementing the `subscribe and watch #3749` logic, the developer realizes that they need to add functionality to the `pkg/coreutils/json.go` file. In this case, they should raise a new issue and submit a dedicated PR.
 
-Related articles:
+#### Related articles
 
 - [Pull Requests and Code Reviews](se-pr.md)
 
